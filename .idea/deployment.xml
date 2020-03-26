@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="sei-des1">
+    <serverData>
+      <paths name="sei-des1">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/opt/instancias-sei/sei-des1/clientes/solicitacao-candidato" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
