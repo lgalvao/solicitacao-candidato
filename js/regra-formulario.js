@@ -223,8 +223,8 @@ function validar() {
             document.getElementById('erro-cep').innerHTML = '';
         }
     }
-
-    return false
+    console.log('aa')
+    return true
 }
 
 function loader() {

@@ -1,3 +1,16 @@
+<?php
+session_start();
+// CONFIG METADADOS DO FORMULARIO:
+$_SESSION['meta_keywords'] = "Formulário, Form";
+$_SESSION['meta_description'] = "Cadastro de usuario SIEL";
+
+// CONFIG CAMINHO DO WS DO FORMULARIO:
+$path_servico = "ws_formulario_siel.php";
+// CONFIG CHAVE DA ACAO DO FORMULARIO:
+$chave_acao = "cadastro_siel";
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +26,9 @@
             <img src="img/tre-to.png" width="370" height="80" class="d-inline-block align-top" alt="tre-to">
         </a>
     </nav>
-
     <h3 class="text-center mt-3">Formulário de Regularização</h3>
     <div class="container mt-4">
-        <form onsubmit="return validar()" id="formulario" method="POST" action="registrar-processo.php" enctype="multipart/form-data">
+        <form onsubmit="return validar()" id="formulario" method="POST" action="ws_formulario.php" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div class="card mt-2">
@@ -24,7 +36,7 @@
                             <h5 class="card-title">Dados Cadastrais</h5>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input onclick="aplicarRegra()" class="form-check-input" checked name="comunicacao" type="checkbox" id="check-comunicacao">
+                                    <input onclick="aplicarRegra()" class="form-check-input" checked name="comunicacao" type="checkbox" value="true" id="check-comunicacao">
                                     <label class="form-check-label font-weight-bold" for="check-comunicacao">
                                         Comunicação de Desfiliação Partidária
                                     </label>
@@ -32,7 +44,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input onclick="aplicarRegra()" class="form-check-input" name="transferencia" type="checkbox" id="check-transferencia">
+                                    <input onclick="aplicarRegra()" class="form-check-input" name="transferencia" type="checkbox" value="true" id="check-transferencia">
                                     <label class="form-check-label font-weight-bold" for="check-transferencia">
                                         Transferência de Domicilio Eleitoral
                                     </label>
@@ -50,9 +62,8 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="select-municipio">Município de origem</label>
-                                <select id="select-municipio" class=" form-control form-control-sm" name="municipio">
+                                <select id="select-municipio" class=" form-control form-control-sm" name="municipio" onchange="carregarLocalVotacao()">
                                     <option value="" selected>Escolha...</option>
-                                    <option value="palmas">Palmas</option>
                                 </select>
                                 <p class="error" id="erro-municipio"></p>
                             </div>
@@ -61,7 +72,7 @@
                                 <input class=" form-control form-control-sm" type="text" name="telefone" id="input-telefone">
                                 <p class="error" id="erro-telefone"></p>
                                 <div class="form-check">
-                                    <input class="form-check-input" name="whatsapp" type="checkbox" id="check-whatszapp">
+                                    <input class="form-check-input" name="whatsapp" type="checkbox" id="check-whatszapp" value="true">
                                     <label class="form-check-label" for="check-whatszapp">
                                         WhatsApp
                                     </label>
@@ -76,9 +87,6 @@
                                 <label class="font-weight-bold" for="select-partido">Partido</label>
                                 <select id="select-partido" class=" form-control form-control-sm" name="partido">
                                     <option value="" selected>Escolha...</option>
-                                    <option value="PT">PT</option>
-                                    <option value="PSL">PSL</option>
-                                    <option value="PSDB">PSDB</option>
                                 </select>
                                 <p class="error" id="erro-partido"></p>
                             </div>
@@ -105,15 +113,12 @@
                                 <label class="font-weight-bold" for="select-local-votacao">Local de Votação</label>
                                 <select id="select-local-votacao" class=" form-control form-control-sm" name="localVotacao">
                                     <option value="" selected>Escolha...</option>
-                                    <option value="palmas">Palmas</option>
-                                    <option value="gurupi">Gurupi</option>
-                                    <option value="porto">Porto Nacional</option>
                                 </select>
                                 <p class="error" id="erro-local-votacao"></p>
                             </div>
                             <div class="form-group transferencia">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="necessidadeEspecial" type="checkbox" id="check-necessidade-especial">
+                                    <input class="form-check-input" name="necessidadeEspecial" type="checkbox" value="true" id="check-necessidade-especial">
                                     <label class="form-check-label font-weight-bold" for="check-necessidade-especial">
                                         Necessita Atendimento Especial
                                     </label>
@@ -218,5 +223,7 @@
         </form>
     </div>
 </body>
+<script src="js/jquey.js"></script>
 <script src="js/regra-formulario.js"></script>
+<script src="js/consultaAjax.js"></script>
 </html>
