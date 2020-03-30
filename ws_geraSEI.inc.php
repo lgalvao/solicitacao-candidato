@@ -37,6 +37,7 @@ $Procedimento['Observacao'] = null;
 $Procedimento['NivelAcesso'] = null;
 
 $documentos = [];
+$documentosTransferecia = [];
 
 //Documento interno Comunicacao
 if ($conteudoComunicacao !== '') {
@@ -98,7 +99,7 @@ if ($conteudoTransferencia !== '') {
 	$DocumentoGerado2['Conteudo'] = base64_encode(utf8_encode ($conteudoTransferencia));
 	$DocumentoGerado2['NivelAcesso'] = null;
 
-	array_push($documentos, $DocumentoGerado2);
+	array_push($documentosTransferecia, $DocumentoGerado2);
 }
 
 if (isset($comprovante_rg_name)) {
@@ -124,6 +125,7 @@ if (isset($comprovante_rg_name)) {
 	$documento['NivelAcesso'] = null;
 
 	array_push($documentos, $DocumentoRecebido);
+    array_push($documentosTransferecia, $DocumentoRecebido);
 }
 
 if (isset($comprovante_cpf_name)) {
@@ -149,6 +151,7 @@ if (isset($comprovante_cpf_name)) {
 	$documento['NivelAcesso'] = null;
 
 	array_push($documentos, $DocumentoRecebido);
+    array_push($documentosTransferecia, $DocumentoRecebido);
 }
 
 if (isset($comprovante_titulo_name)) {
@@ -168,12 +171,13 @@ if (isset($comprovante_titulo_name)) {
 
 	$DocumentoRecebido['Interessados'] = $arrInteressados;
 	$DocumentoRecebido['Destinatarios'] = null;
-	$DocumentoRecebido['Observacao'] = 'compravente cpf';
+	$DocumentoRecebido['Observacao'] = 'compravente titulo';
 	$DocumentoRecebido['NomeArquivo'] = $comprovante_titulo_name;
 	$DocumentoRecebido['Conteudo'] = base64_encode(file_get_contents(dirname(__FILE__) . '/uploads/' . $comprovante_titulo_name));
 	$documento['NivelAcesso'] = null;
 
 	array_push($documentos, $DocumentoRecebido);
+    array_push($documentosTransferecia, $DocumentoRecebido);
 }
 
 if (isset($comprovante_selfie_name)) {
@@ -193,12 +197,13 @@ if (isset($comprovante_selfie_name)) {
 
 	$DocumentoRecebido['Interessados'] = $arrInteressados;
 	$DocumentoRecebido['Destinatarios'] = null;
-	$DocumentoRecebido['Observacao'] = 'compravente cpf';
+	$DocumentoRecebido['Observacao'] = 'compravente selfie';
 	$DocumentoRecebido['NomeArquivo'] = $comprovante_selfie_name;
 	$DocumentoRecebido['Conteudo'] = base64_encode(file_get_contents(dirname(__FILE__) . '/uploads/' . $comprovante_selfie_name));
 	$documento['NivelAcesso'] = null;
 
 	array_push($documentos, $DocumentoRecebido);
+    array_push($documentosTransferecia, $DocumentoRecebido);
 }
 
 if (isset($comprovante_desfiliacao_name)) {
@@ -248,16 +253,24 @@ if (isset($comprovante_endereco_name)) {
 	$DocumentoRecebido['Conteudo'] = base64_encode(file_get_contents(dirname(__FILE__) . '/uploads/' . $comprovante_endereco_name));
 	$documento['NivelAcesso'] = null;
 
-	array_push($documentos, $DocumentoRecebido);
+	array_push($documentosTransferecia, $DocumentoRecebido);
 }
 
-$ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, $numIdUnidade, $Procedimento, $documentos, array(), $UnidadesEnvio);
+if ($comunicacao) {
+    $ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, $numIdUnidade, $Procedimento, $documentos, array(), $UnidadesEnvio);
+}
+
+if ($transferencia) {
+    $ret2 = $objWS->gerarProcedimento($SEISistema, $SEIForm, $numIdUnidadeDestino, $Procedimento, $documentosTransferecia, array(), $UnidadesEnvio);
+}
+
 
 $url  = 'http://dudol.tre-to.gov.br:8080/dudol/email/enviar';
 $data = ['key' => 'value'];
 $ch   = curl_init();
-
-$message = "Processo: ".$ret->LinkAcesso;
+$message = '';
+$message .= $comunicacao ? utf8_encode("Processo Comunicação de Desfiliação Partidária: ".$ret->LinkAcesso) : ' ';
+$message .= $transferencia ? utf8_encode("Processo Transferência de Domicilio Eleitoral: ".$ret2->LinkAcesso) : ' ';
 
 $data = array(
     'from' => 'no-reply2@tre-to.jus.br',
@@ -294,11 +307,23 @@ curl_close($ch);
 
 <h3 class="text-center mt-3">Formulário de Regularização</h3>
 <div class="container mt-4">
-	<div class="alert alert-success" role="alert">
-		<a href="<?= $ret->LinkAcesso; ?>">
-			Processo gerado: <?= $ret->ProcedimentoFormatado; ?>
-		</a>
-	</div>
+
+    <?php if ($comunicacao) { ?>
+        <div class="alert alert-success" role="alert">
+                <a href="<?= $ret->LinkAcesso; ?>">
+                    Processo gerado: <?= $ret->ProcedimentoFormatado; ?>
+                </a>
+        </div>
+    <? } ?>
+
+    <?php if ($transferencia) { ?>
+        <div class="alert alert-success" role="alert">
+            <a href="<?= $ret2->LinkAcesso; ?>">
+                Processo gerado: <?= $ret2->ProcedimentoFormatado; ?>
+            </a>
+        </div>
+    <? } ?>
+
 </div>
 </body>
 <script src="js/jquey.js"></script>

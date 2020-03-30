@@ -2,12 +2,12 @@
 session_start();
 // CONFIG METADADOS DO FORMULARIO:
 $_SESSION['meta_keywords'] = "Formulário, Form";
-$_SESSION['meta_description'] = "Cadastro de usuario SIEL";
+$_SESSION['meta_description'] = "Formulário de Regularização";
 
 // CONFIG CAMINHO DO WS DO FORMULARIO:
-$path_servico = "ws_formulario_siel.php";
+$path_servico = "ws_formulario.php";
 // CONFIG CHAVE DA ACAO DO FORMULARIO:
-$chave_acao = "cadastro_siel";
+$chave_acao = "cadastro_regular";
 
 ?>
 
@@ -61,8 +61,15 @@ $chave_acao = "cadastro_siel";
                                 <p class="error" id="erro-nome"></p>
                             </div>
                             <div class="form-group">
-                                <label class="font-weight-bold" for="select-municipio">Município de origem</label>
-                                <select id="select-municipio" class=" form-control form-control-sm" name="municipio" onchange="carregarLocalVotacao()">
+                                <label class="font-weight-bold" for="select-municipio">Município da Inscrição Eleitoral</label>
+                                <select id="select-municipio" class=" form-control form-control-sm" name="municipio">
+                                    <option value="" selected>Escolha...</option>
+                                </select>
+                                <p class="error" id="erro-municipio"></p>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold transferencia" for="select-municipio-destino">Município destino</label>
+                                <select id="select-municipio-destino" class=" form-control form-control-sm transferencia" name="municipioDestino" onchange="carregarLocalVotacao()">
                                     <option value="" selected>Escolha...</option>
                                 </select>
                                 <p class="error" id="erro-municipio"></p>

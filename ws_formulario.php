@@ -1,11 +1,12 @@
 <?php
 session_start();
-    $acao = 'cadastro_siel';
+    $acao = 'cadastro_regular';
     $comunicacao = isset($_POST['comunicacao']) ? true : false;
     $transferencia = isset($_POST['transferencia']) ? true : false;
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
     $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
+    $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
     $whatsapp = isset($_POST['whatsapp']) ? 'sim' : 'não';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
@@ -25,25 +26,124 @@ session_start();
     $cep = isset($_POST['cep']) ? $_POST['cep'] : '';
 
     function getAmbiente(){
-        return array("idTipoProcedimento"=>100000899,"idSerie"=>50188,"idSerie2"=>50189,"idSerie3"=>290,"numIdUnidade"=>226,"strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei");
+        $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
+        $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
+        require_once "database/oracle.php";
+
+        $con = DBOracle::Conecta('ADM');
+        $sql = "SELECT * from ADMCADTO.MUNICIPIO_ZONA MZ
+        INNER JOIN ADMCADTO.ZONA Z
+            ON Z.COD_OBJETO = MZ.COD_ZONA
+        WHERE COD_MUNICIPIO = ".$municipio;
+        $stmt = OCIParse($con, $sql);
+        $numeroZona = array();
+
+        if(oci_execute($stmt)) {
+            oci_fetch_all($stmt, $numeroZona, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
+        }
+
+        $con = DBOracle::Conecta('ADM');
+        $sql = "SELECT ID_UNIDADE, DESCRICAO from UNIDADE WHERE SIGLA LIKE concat(".$numeroZona[0]['NUM_ZONA'].",'%')";
+        $stmt = OCIParse($con, $sql);
+        $idIunidade = array();
+
+        if(oci_execute($stmt)) {
+            oci_fetch_all($stmt, $idIunidade, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
+        }
+
+        $con = DBOracle::Conecta('ADM');
+        $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipio."'";
+        $stmt = OCIParse($con, $sql);
+        $descricaoMunicipio = array();
+
+        if(oci_execute($stmt)) {
+            oci_fetch_all($stmt, $descricaoMunicipio, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
+        }
+
+        $numIdUnidadeDestino = '';
+        $descricaoMunicipioDestino = array();
+        if ($municipioDestino != '') {
+            $con = DBOracle::Conecta('ADM');
+            $sql = "SELECT * from ADMCADTO.MUNICIPIO_ZONA MZ
+            INNER JOIN ADMCADTO.ZONA Z
+                ON Z.COD_OBJETO = MZ.COD_ZONA
+            WHERE COD_MUNICIPIO = ".$municipioDestino;
+            $stmt = OCIParse($con, $sql);
+            $numeroZona = array();
+
+            if(oci_execute($stmt)) {
+                oci_fetch_all($stmt, $numeroZona, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
+            }
+
+            $con = DBOracle::Conecta('ADM');
+            $sql = "SELECT ID_UNIDADE, DESCRICAO from UNIDADE WHERE SIGLA LIKE concat(".$numeroZona[0]['NUM_ZONA'].",'%')";
+            $stmt = OCIParse($con, $sql);
+            $idIunidadeDestino = array();
+
+            if(oci_execute($stmt)) {
+                oci_fetch_all($stmt, $idIunidadeDestino, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
+            }
+
+            $con = DBOracle::Conecta('ADM');
+            $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipioDestino."'";
+            $stmt = OCIParse($con, $sql);
+            $descricaoMunicipioDestino = array();
+
+            if(oci_execute($stmt)) {
+                oci_fetch_all($stmt, $descricaoMunicipioDestino, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
+            }
+
+            $numIdUnidadeDestino = $idIunidadeDestino[0]['ID_UNIDADE'];
+        }
+
+        $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
+
+        if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br') {
+            return array(
+                "idTipoProcedimento"=>100000899,
+                "idSerie"=>50188,
+                "idSerie2"=>50189,
+                "idSerie3"=>330,
+                "numIdUnidade"=>$numIdUnidade,
+                "zonaDescricao"=>$descricaoMunicipio[0]['NOM_LOCALIDADE'],
+                "numIdUnidadeDestino"=>$numIdUnidadeDestino != '' ? $numIdUnidadeDestino : '' ,
+                "zonaDescricaoDestino"=>count($descricaoMunicipioDestino) > 0 ? $descricaoMunicipioDestino[0]['NOM_LOCALIDADE'] : '',
+                "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
+            );
+        }
+
+        if ($_SERVER['SERVER_NAME'] == 'sei.tre-to.jus.br') {
+            return array(
+                "idTipoProcedimento"=>100000899,
+                "idSerie"=>50188,
+                "idSerie2"=>50189,
+                "idSerie3"=>330,
+                "numIdUnidade"=>$numIdUnidade,
+                "zonaDescricao"=>$descricaoMunicipio[0]['NOM_LOCALIDADE'],
+                "numIdUnidadeDestino"=>$numIdUnidadeDestino != '' ? $numIdUnidadeDestino : '' ,
+                "zonaDescricaoDestino"=>count($descricaoMunicipioDestino) > 0 ? $descricaoMunicipioDestino[0]['NOM_LOCALIDADE'] : '',
+                "strWSDL"=>"https://sei.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
+            );
+        }
     }
 
     //-- Config do WS para este formulário (ALTERAR)
-    $SEISistema = 'SIEL';
-    $SEIForm = 'FormCadastroUsuarioSiel';
+    $SEISistema = 'Regular';
+    $SEIForm = 'formRegularizacaoExterno';
     $IdTipoProcedimento = getAmbiente()["idTipoProcedimento"];
 
     $IdSerie =  getAmbiente()["idSerie"];
     $IdSerie2 =  getAmbiente()["idSerie2"];
     $IdSerie3 =  getAmbiente()["idSerie3"];
-    $Descricao = 'Formulário de Solicitação de cadastro no sistema SIEL.';
+    $Descricao = 'Formulário de Regularização.';
 
     $numIdUnidade =  getAmbiente()["numIdUnidade"];
+    $numIdUnidadeDestino =  getAmbiente()["numIdUnidadeDestino"];
     $UnidadesEnvio = array();
 
     date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
 
-    if($comprovanteRg) {
+    if($comprovanteRg['name'] !== '') {
         $ext = '.'.strtolower(pathinfo($comprovanteRg['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
         $comprovante_rg_name = "comprovate_rg".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
         $dir = 'uploads/'; //Diretório para uploads
@@ -51,7 +151,7 @@ session_start();
         move_uploaded_file($comprovanteRg['tmp_name'], $dir.$comprovante_rg_name); //Fazer upload do arquivo
     }
 
-    if($comprovanteCpf) {
+    if($comprovanteCpf['name'] !== '') {
         $ext = '.'.strtolower(pathinfo($comprovanteCpf['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
         $comprovante_cpf_name = "comprovate_cpf".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
         $dir = 'uploads/'; //Diretório para uploads
@@ -59,7 +159,7 @@ session_start();
         move_uploaded_file($comprovanteCpf['tmp_name'], $dir.$comprovante_cpf_name); //Fazer upload do arquivo
     }
 
-    if($comprovanteTitulo) {
+    if($comprovanteTitulo['name'] !== '') {
         $ext = '.'.strtolower(pathinfo($comprovanteTitulo['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
         $comprovante_titulo_name = "comprovate_titulo".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
         $dir = 'uploads/'; //Diretório para uploads
@@ -67,7 +167,7 @@ session_start();
         move_uploaded_file($comprovanteTitulo['tmp_name'], $dir.$comprovante_titulo_name); //Fazer upload do arquivo
     }
 
-    if($comprovanteSelfie) {
+    if($comprovanteSelfie['name'] !== '') {
         $ext = '.'.strtolower(pathinfo($comprovanteSelfie['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
         $comprovante_selfie_name = "comprovate_selfie".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
         $dir = 'uploads/'; //Diretório para uploads
@@ -75,7 +175,7 @@ session_start();
         move_uploaded_file($comprovanteSelfie['tmp_name'], $dir.$comprovante_selfie_name); //Fazer upload do arquivo
     }
 
-    if($comprovanteDesfiliacao) {
+    if($comprovanteDesfiliacao['name'] !== '') {
         $ext = '.'.strtolower(pathinfo($comprovanteDesfiliacao['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
         $comprovante_desfiliacao_name = "comprovate_desfiliacao".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
         $dir = 'uploads/'; //Diretório para uploads
@@ -83,7 +183,7 @@ session_start();
         move_uploaded_file($comprovanteDesfiliacao['tmp_name'], $dir.$comprovante_desfiliacao_name); //Fazer upload do arquivo
     }
 
-    if($comprovanteEndereco) {
+    if($comprovanteEndereco['name'] !== '') {
         $ext = '.'.strtolower(pathinfo($comprovanteEndereco['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
         $comprovante_endereco_name = "comprovate_endereco".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
         $dir = 'uploads/'; //Diretório para uploads
@@ -91,7 +191,7 @@ session_start();
         move_uploaded_file($comprovanteEndereco['tmp_name'], $dir.$comprovante_endereco_name); //Fazer upload do arquivo
     }
 
-    if ($acao=='cadastro_siel') {// chave da acao
+    if ($acao=='cadastro_regular') {// chave da acao
         include_once("ws_geraSEI.inc.php");
     } else {
         throw new InfraException("Erro gerando {$_SESSION['meta_description']}");
