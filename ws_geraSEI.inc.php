@@ -39,33 +39,6 @@ $Procedimento['NivelAcesso'] = null;
 
 $documentos = [];
 
-$DocumentoGerado = array();
-$DocumentoGerado['Tipo'] = 'G';
-$DocumentoGerado['IdProcedimento'] = null;
-$DocumentoGerado['IdSerie'] = $IdSerie;
-
-$DocumentoGerado['Numero'] = null;
-$DocumentoGerado['Data'] = null;
-$DocumentoGerado['Descricao'] = $Descricao;
-$DocumentoGerado['Remetente'] = null;
-
-//Mantem o array Interessados ja criado acima
-
-$arrInteressados = array();
-$DocumentoGerado['Interessados'] = $arrInteressados;
-
-//Usado somente em alguns tipos, mas necessário para o webservice
-$arrDestinatarios = array();
-$DocumentoGerado['Destinatarios'] = $arrDestinatarios;
-
-//Observaçoes para o Documento gerado
-$DocumentoGerado['Observacao'] = 'observação teste';
-
-$DocumentoGerado['NomeArquivo'] = null;
-$DocumentoGerado['Conteudo'] = base64_encode(utf8_encode($conteudo));
-$DocumentoGerado['NivelAcesso'] = null;
-
-array_push($documentos, $DocumentoGerado);
 
 $DocumentoGerado2 = array();
 $DocumentoGerado2['Tipo'] = 'G';
@@ -95,6 +68,33 @@ $DocumentoGerado2['NivelAcesso'] = null;
 
 array_push($documentos, $DocumentoGerado2);
 
+$DocumentoGerado = array();
+$DocumentoGerado['Tipo'] = 'G';
+$DocumentoGerado['IdProcedimento'] = null;
+$DocumentoGerado['IdSerie'] = $IdSerie;
+
+$DocumentoGerado['Numero'] = null;
+$DocumentoGerado['Data'] = null;
+$DocumentoGerado['Descricao'] = $Descricao;
+$DocumentoGerado['Remetente'] = null;
+
+//Mantem o array Interessados ja criado acima
+
+$arrInteressados = array();
+$DocumentoGerado['Interessados'] = $arrInteressados;
+
+//Usado somente em alguns tipos, mas necessário para o webservice
+$arrDestinatarios = array();
+$DocumentoGerado['Destinatarios'] = $arrDestinatarios;
+
+//Observaçoes para o Documento gerado
+$DocumentoGerado['Observacao'] = 'observação teste';
+
+$DocumentoGerado['NomeArquivo'] = null;
+$DocumentoGerado['Conteudo'] = base64_encode(utf8_encode($conteudo));
+$DocumentoGerado['NivelAcesso'] = null;
+
+array_push($documentos, $DocumentoGerado);
 
 if (isset($comprovante_rg_name)) {
 	//Documento Recebido

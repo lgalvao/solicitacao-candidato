@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documento.php" beforeDir="false" afterPath="$PROJECT_DIR$/documento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/formulario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/regra-formulario.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/regra-formulario.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requerimento.php" beforeDir="false" afterPath="$PROJECT_DIR$/requerimento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ws_formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_formulario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws_geraSEI.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_geraSEI.inc.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ws_geraSEI.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="103" column="45" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="45" />
+            <state relative-caret-position="428">
+              <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -65,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/requerimento.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="60">
+              <caret line="4" column="104" lean-forward="true" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
             </state>
           </provider>
         </entry>
@@ -130,11 +127,11 @@
       <find>echo</find>
       <find>23585</find>
       <find>$IdSerie</find>
-      <find>$IdSerie2</find>
       <find>endere</find>
       <find>local</find>
       <find>titulo</find>
       <find>idSerie2</find>
+      <find>$IdSerie2</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;error&quot;</replace>
@@ -166,7 +163,6 @@
         <option value="$PROJECT_DIR$/js/consultaAjax.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/termo.php" />
-        <option value="$PROJECT_DIR$/ws_geraSEI.inc.php" />
         <option value="$PROJECT_DIR$/resposta.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -174,6 +170,7 @@
         <option value="$PROJECT_DIR$/formulario.php" />
         <option value="$PROJECT_DIR$/ws_formulario.php" />
         <option value="$PROJECT_DIR$/documento.php" />
+        <option value="$PROJECT_DIR$/ws_geraSEI.inc.php" />
         <option value="$PROJECT_DIR$/requerimento.php" />
       </list>
     </option>
@@ -261,12 +258,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585169348009</updated>
-      <workItem from="1585169349646" duration="86869000" />
+      <workItem from="1585169349646" duration="87419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86869000" />
+    <option name="totallyTimeSpent" value="87419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="35" width="1920" height="979" extended-state="6" />
@@ -474,13 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws_geraSEI.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="103" column="45" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -519,10 +509,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ws_geraSEI.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/requerimento.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="60">
+          <caret line="4" column="104" lean-forward="true" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
         </state>
       </provider>
     </entry>
