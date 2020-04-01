@@ -49,5 +49,5 @@ Tilo de Numeração: sem Numeração
 
 "idTipoProcedimento"=>id(Tecnologia da Informação - Sistemas corporativos),
 "idSerie"=> id(Formulário Comunicação de Desfiliação Partidária),
-"idSerie2"=>id(Formulário Transferência de Domicilio Eleitoral),
-"idSerie3"=>id(Comprovante),
+"idSerie2"=>id(Requerimento),
+"idSerie3"=>id(Anexo),

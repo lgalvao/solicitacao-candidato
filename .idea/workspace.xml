@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/id-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/judge-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/user-files-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/users-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documento.php" beforeDir="false" afterPath="$PROJECT_DIR$/documento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/formulario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/consultaAjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/consultaAjax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/regra-formulario.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/regra-formulario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ws_formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_formulario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ws_geraSEI.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_geraSEI.inc.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ws_formulario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="35" />
+            <state relative-caret-position="527">
+              <caret line="105" column="13" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -36,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ws_geraSEI.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="255" column="92" selection-start-line="255" selection-start-column="92" selection-end-line="255" selection-end-column="92" />
+            <state relative-caret-position="198">
+              <caret line="103" column="45" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -51,11 +39,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
+              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="447">
+                <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -64,9 +64,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$path_servico</find>
-      <find>$documentos</find>
-      <find>$ret = $objWS-&gt;gerarProcedimento($SEISistema, $SEIForm, $numIdUnidadeDestino, $Procedimento, $documentos, array(), $UnidadesEnvio);</find>
       <find>$UnidadesEnvio</find>
       <find>0000195-27.2020.6.27.8019</find>
       <find>dest</find>
@@ -92,8 +89,11 @@
       <find>wha</find>
       <find>endereco</find>
       <find>$result</find>
-      <find>$IdSerie2</find>
       <find>echo</find>
+      <find>23585</find>
+      <find>idSerie2</find>
+      <find>$IdSerie</find>
+      <find>$IdSerie2</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;error&quot;</replace>
@@ -124,7 +124,6 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/documento.php" />
         <option value="$PROJECT_DIR$/js/consultaAjax.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/ws_formulario.php" />
         <option value="$PROJECT_DIR$/requerimento.php" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -134,6 +133,7 @@
         <option value="$PROJECT_DIR$/ws_geraSEI.inc.php" />
         <option value="$PROJECT_DIR$/resposta.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -215,12 +215,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585169348009</updated>
-      <workItem from="1585169349646" duration="84828000" />
+      <workItem from="1585169349646" duration="85040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84828000" />
+    <option name="totallyTimeSpent" value="85040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="35" width="1920" height="979" extended-state="6" />
@@ -232,7 +232,7 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.49946752" weight="0.24464487" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49946752" visible="true" weight="0.24464487" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5005325" side_tool="true" weight="0.32919955" />
       <window_info anchor="bottom" id="File Transfer" weight="0.32919955" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -407,16 +407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="390">
-            <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="53">
@@ -456,20 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws_formulario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ws_geraSEI.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="255" column="92" selection-start-line="255" selection-start-column="92" selection-end-line="255" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resposta.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -480,7 +456,31 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ws_formulario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="105" column="13" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ws_geraSEI.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="103" column="45" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="447">
+            <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
