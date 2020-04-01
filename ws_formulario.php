@@ -5,13 +5,13 @@ session_start();
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
     $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
     $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
-    $whatsapp = isset($_POST['whatsapp']) ? 'sim' : 'não';
+    $whatsapp = isset($_POST['whatsapp']) ? 'sim' : 'no';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
     $partido = isset($_POST['partido']) ? $_POST['partido'] : '';
     $desfiliacao = isset($_POST['desfiliacao']) ? $_POST['desfiliacao'] : '';
     $localVotacao = isset($_POST['localVotacao']) ? $_POST['localVotacao'] : '';
-    $necessidadeEspecial = isset($_POST['necessidadeEspecial']) ? 'sim' : 'não';
+    $necessidadeEspecial = isset($_POST['necessidadeEspecial']) ? 'sim' : 'no';
     $comprovanteRg = isset($_FILES['comprovanteRg']) ? $_FILES['comprovanteRg'] : '';
     $comprovanteCpf = isset($_FILES['comprovanteCpf']) ? $_FILES['comprovanteCpf'] : '';
     $comprovanteTitulo = isset($_FILES['comprovanteTitulo']) ? $_FILES['comprovanteTitulo'] : '';
@@ -84,8 +84,8 @@ session_start();
 
         if ($_SERVER['SERVER_NAME'] == 'sei.tre-to.jus.br') {
             return array(
-                "idTipoProcedimento"=>100000899,
-                "idSerie"=>50189,
+                "idTipoProcedimento"=>100000749,
+                "idSerie"=>50105,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
@@ -96,7 +96,7 @@ session_start();
         }
     }
 
-    //-- Config do WS para este formulário (ALTERAR)
+    //-- Config do WS para este formulrio (ALTERAR)
     $SEISistema = 'Regular';
     $SEIForm = 'formRegularizacaoExterno';
     $IdTipoProcedimento = getAmbiente()["idTipoProcedimento"];
@@ -104,49 +104,49 @@ session_start();
     $IdSerie =  getAmbiente()["idSerie"];
     $IdSerie2 =  getAmbiente()["idSerie2"];
     $IdSerie3 =  getAmbiente()["idSerie3"];
-    $Descricao = 'Formulário de Regularização.';
+    $Descricao = 'Formulrio de Regularizao.';
 
     $numIdUnidade =  getAmbiente()["numIdUnidade"];
     $UnidadesEnvio = array();
 
-    date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
+    date_default_timezone_set("Brazil/East"); //Definindo timezone padro
 
     if($comprovanteRg['name'] !== '') {
-        $ext = '.'.strtolower(pathinfo($comprovanteRg['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
+        $ext = '.'.strtolower(pathinfo($comprovanteRg['name'], PATHINFO_EXTENSION)); //Pegando extenso do arquivo
         $comprovante_rg_name = "comprovate_rg".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-        $dir = 'uploads/'; //Diretório para uploads
+        $dir = 'uploads/'; //Diretrio para uploads
 
         move_uploaded_file($comprovanteRg['tmp_name'], $dir.$comprovante_rg_name); //Fazer upload do arquivo
     }
 
     if($comprovanteCpf['name'] !== '') {
-        $ext = '.'.strtolower(pathinfo($comprovanteCpf['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
+        $ext = '.'.strtolower(pathinfo($comprovanteCpf['name'], PATHINFO_EXTENSION)); //Pegando extenso do arquivo
         $comprovante_cpf_name = "comprovate_cpf".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-        $dir = 'uploads/'; //Diretório para uploads
+        $dir = 'uploads/'; //Diretrio para uploads
 
         move_uploaded_file($comprovanteCpf['tmp_name'], $dir.$comprovante_cpf_name); //Fazer upload do arquivo
     }
 
     if($comprovanteTitulo['name'] !== '') {
-        $ext = '.'.strtolower(pathinfo($comprovanteTitulo['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
+        $ext = '.'.strtolower(pathinfo($comprovanteTitulo['name'], PATHINFO_EXTENSION)); //Pegando extenso do arquivo
         $comprovante_titulo_name = "comprovate_titulo".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-        $dir = 'uploads/'; //Diretório para uploads
+        $dir = 'uploads/'; //Diretrio para uploads
 
         move_uploaded_file($comprovanteTitulo['tmp_name'], $dir.$comprovante_titulo_name); //Fazer upload do arquivo
     }
 
     if($comprovanteSelfie['name'] !== '') {
-        $ext = '.'.strtolower(pathinfo($comprovanteSelfie['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
+        $ext = '.'.strtolower(pathinfo($comprovanteSelfie['name'], PATHINFO_EXTENSION)); //Pegando extenso do arquivo
         $comprovante_selfie_name = "comprovate_selfie".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-        $dir = 'uploads/'; //Diretório para uploads
+        $dir = 'uploads/'; //Diretrio para uploads
 
         move_uploaded_file($comprovanteSelfie['tmp_name'], $dir.$comprovante_selfie_name); //Fazer upload do arquivo
     }
 
     if($comprovanteEndereco['name'] !== '') {
-        $ext = '.'.strtolower(pathinfo($comprovanteEndereco['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
+        $ext = '.'.strtolower(pathinfo($comprovanteEndereco['name'], PATHINFO_EXTENSION)); //Pegando extenso do arquivo
         $comprovante_endereco_name = "comprovate_endereco".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-        $dir = 'uploads/'; //Diretório para uploads
+        $dir = 'uploads/'; //Diretrio para uploads
 
         move_uploaded_file($comprovanteEndereco['tmp_name'], $dir.$comprovante_endereco_name); //Fazer upload do arquivo
     }
