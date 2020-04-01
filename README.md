@@ -34,12 +34,6 @@ Tipo do Documento: Requerimento
 6.Criar Tipos Documentos
 
 Grupo: Geral
-Nome: Formulário Comunicação de Desfiliação Partidária
-Aplicabilidade: Documentos internos
-Modelo: Geral sem Unid sem Num
-Tilo de Numeração: sem Numeração
-
-Grupo: Geral
 Nome: Formulário Transferência de Domicilio Eleitoral
 Aplicabilidade: Documentos internos
 Modelo: Geral sem Unid sem Num
@@ -48,6 +42,6 @@ Tilo de Numeração: sem Numeração
 7.Atribuir as configurações no metodo getAmbiente() no documento ws_formulário
 
 "idTipoProcedimento"=>id(Tecnologia da Informação - Sistemas corporativos),
-"idSerie"=> id(Formulário Comunicação de Desfiliação Partidária),
+"idSerie"=> id(Formulário Transferência de Domicilio Eleitoral),
 "idSerie2"=>id(Requerimento),
 "idSerie3"=>id(Anexo),
