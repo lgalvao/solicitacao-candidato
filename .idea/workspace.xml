@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documento.php" beforeDir="false" afterPath="$PROJECT_DIR$/documento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/formulario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/regra-formulario.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/regra-formulario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requerimento.php" beforeDir="false" afterPath="$PROJECT_DIR$/requerimento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws_formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_formulario.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ws_formulario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="105" column="13" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="13" />
+            <state relative-caret-position="60">
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -41,6 +45,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formulario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="38" column="104" selection-start-line="38" selection-start-column="95" selection-end-line="38" selection-end-column="104" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/documento.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requerimento.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -49,14 +80,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="396">
-                <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+              <first_editor relative-caret-position="411">
+                <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/regra-formulario.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -65,8 +105,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$UnidadesEnvio</find>
-      <find>0000195-27.2020.6.27.8019</find>
       <find>dest</find>
       <find>$numIdUnidade</find>
       <find>transferencia</find>
@@ -76,7 +114,6 @@
       <find>desfilia</find>
       <find>desfiliacao</find>
       <find>partido</find>
-      <find>local</find>
       <find>$conteudoTransferencia</find>
       <find>$conteudo</find>
       <find>loca</find>
@@ -92,9 +129,12 @@
       <find>$result</find>
       <find>echo</find>
       <find>23585</find>
-      <find>idSerie2</find>
       <find>$IdSerie</find>
       <find>$IdSerie2</find>
+      <find>endere</find>
+      <find>local</find>
+      <find>titulo</find>
+      <find>idSerie2</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;error&quot;</replace>
@@ -123,18 +163,18 @@
         <option value="$PROJECT_DIR$/database/partido.php" />
         <option value="$PROJECT_DIR$/requerimento.html" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/documento.php" />
         <option value="$PROJECT_DIR$/js/consultaAjax.js" />
-        <option value="$PROJECT_DIR$/ws_formulario.php" />
-        <option value="$PROJECT_DIR$/requerimento.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/termo.php" />
-        <option value="$PROJECT_DIR$/formulario.php" />
-        <option value="$PROJECT_DIR$/js/regra-formulario.js" />
         <option value="$PROJECT_DIR$/ws_geraSEI.inc.php" />
         <option value="$PROJECT_DIR$/resposta.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/js/regra-formulario.js" />
+        <option value="$PROJECT_DIR$/formulario.php" />
+        <option value="$PROJECT_DIR$/ws_formulario.php" />
+        <option value="$PROJECT_DIR$/documento.php" />
+        <option value="$PROJECT_DIR$/requerimento.php" />
       </list>
     </option>
   </component>
@@ -156,6 +196,11 @@
             <path>
               <item name="solicitacao-candidato" type="b2602c69:ProjectViewProjectNode" />
               <item name="solicitacao-candidato" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solicitacao-candidato" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solicitacao-candidato" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -216,24 +261,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585169348009</updated>
-      <workItem from="1585169349646" duration="85715000" />
+      <workItem from="1585169349646" duration="86869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85715000" />
+    <option name="totallyTimeSpent" value="86869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="35" width="1920" height="979" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12779553" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12779553" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49946752" visible="true" weight="0.24464487" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49946752" visible="true" weight="0.24464487" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5005325" side_tool="true" weight="0.32919955" />
       <window_info anchor="bottom" id="File Transfer" weight="0.32919955" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -394,13 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/documento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_formulario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -422,31 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/regra-formulario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="96" column="20" lean-forward="true" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formulario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="128" column="49" selection-start-line="128" selection-start-column="49" selection-end-line="128" selection-end-column="72" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#label#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requerimento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resposta.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -461,13 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws_formulario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="105" column="13" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ws_geraSEI.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -478,10 +484,45 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="396">
-            <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <first_editor relative-caret-position="411">
+            <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/regra-formulario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formulario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="38" column="104" selection-start-line="38" selection-start-column="95" selection-end-line="38" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ws_formulario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/documento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requerimento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>

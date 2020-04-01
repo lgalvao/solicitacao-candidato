@@ -79,11 +79,6 @@ $chave_acao = "cadastro_regular";
                                 <input class=" form-control form-control-sm" type="email" name="email" id="input-email">
                                 <p class="error" id="erro-email"></p>
                             </div>
-                            <div class="form-group mt-3">
-                                <label class="font-weight-bold" for="select-local-votacao">Local de Votação</label>
-                                <select id="select-local-votacao" class=" form-control form-control-sm" name="localVotacao"></select>
-                                <p class="error" id="erro-local-votacao"></p>
-                            </div>
                             <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" name="necessidadeEspecial" type="checkbox" value="true" id="check-necessidade-especial">
@@ -162,32 +157,6 @@ $chave_acao = "cadastro_regular";
                                 </div>
                             </div>
                             <p class="help-block">Formatos aceitos: JPG, PNG e PDF</p>
-                        </div>
-                    </div>
-                    <div class="card pb-4 mt-2">
-                        <div class="card-body">
-                            <h5 class="card-title">Dados Endereço</h5>
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold" for="input-endereco">Endereço</label>
-                                        <input class=" form-control form-control-sm" type="text" name="endereco" id="input-endereco">
-                                        <p class="error" id="erro-endereco"></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold" for="input-numero">Número</label>
-                                        <input class=" form-control form-control-sm" type="text" name="numero" id="input-numero">
-                                        <p class="error" id="erro-numero"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="font-weight-bold" for="input-bairro">Bairro</label>
-                                <input class=" form-control form-control-sm" type="text" name="bairro" id="input-bairro">
-                                <p class="error" id="erro-bairro"></p>
-                            </div>
                         </div>
                     </div>
                 </div>

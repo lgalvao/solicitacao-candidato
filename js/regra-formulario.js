@@ -63,15 +63,6 @@ function validar() {
         document.getElementById('erro-telefone').innerHTML = '';
     }
 
-    if (formulario.localVotacao.value === '') {
-        falseLoader();
-        document.getElementById('erro-local-votacao').innerHTML = 'Campo obrigatório';
-        formulario.localVotacao.focus();
-        return false
-    } else {
-        document.getElementById('erro-local-votacao').innerHTML = '';
-    }
-
     if (formulario.comprovanteRg.value === '') {
         falseLoader();
         document.getElementById('erro-comprante-rg').innerHTML = 'Campo obrigatório';
@@ -115,33 +106,6 @@ function validar() {
         return false
     } else {
         document.getElementById('erro-comprante-selfie').innerHTML = '';
-    }
-
-    if (formulario.endereco.value === '') {
-        falseLoader();
-        document.getElementById('erro-endereco').innerHTML = 'Campo obrigatório';
-        formulario.endereco.focus();
-        return false
-    } else {
-        document.getElementById('erro-endereco').innerHTML = '';
-    }
-
-    if (formulario.numero.value === '') {
-        falseLoader();
-        document.getElementById('erro-numero').innerHTML = 'Campo obrigatório';
-        formulario.numero.focus();
-        return false
-    } else {
-        document.getElementById('erro-numero').innerHTML = '';
-    }
-
-    if (formulario.bairro.value === '') {
-        falseLoader();
-        document.getElementById('erro-bairro').innerHTML = 'Campo obrigatório';
-        formulario.bairro.focus();
-        return false
-    } else {
-        document.getElementById('erro-bairro').innerHTML = '';
     }
 
     return true

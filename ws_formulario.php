@@ -2,6 +2,7 @@
 session_start();
     $acao = 'cadastro_regular';
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
+    $tituloNet = isset($_POST['tituloNet']) ? $_POST['tituloNet'] : '';
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
     $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
     $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
