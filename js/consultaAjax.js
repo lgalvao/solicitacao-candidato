@@ -1,5 +1,4 @@
 carregarMunicipios();
-carregarPartidos();
 
 function carregarMunicipios() {
     var selectMunicipio = document.getElementById('select-municipio');
@@ -15,23 +14,11 @@ function carregarMunicipios() {
     });
 }
 
-function carregarPartidos() {
-    var selectPartido = document.getElementById('select-partido');
-    $.ajax({
-        url: "/solicitacao-candidato/database/partido.php",
-        success: function(result) {
-            result.forEach(par => {
-                selectPartido.innerHTML += `<option value="${par.SGL_PARTIDO}">${par.SGL_PARTIDO} - ${par.NOM_PARTIDO}</option>`;
-            });
-        }
-    });
-}
-
 function carregarLocalVotacao() {
     var formulario = document.getElementById('formulario');
     var selectLocalVotacao = document.getElementById('select-local-votacao');
 
-    selectLocalVotacao.innerHTML = '';
+    selectLocalVotacao.innerHTML = '<option value="" selected>Escolha...</option>';
 
     $.ajax({
         url: "/solicitacao-candidato/database/local_votacao.php?cod="+formulario.municipioDestino.value,

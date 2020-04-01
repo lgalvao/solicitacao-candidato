@@ -1,0 +1,35 @@
+.info-block {
+    background-color: #4583B8;
+    color: white;
+    text-align: center;
+    height: 250px;
+}
+.description-block {
+    background-color: #45ADB8;
+    height: 250px;
+    color: rgba(255, 255, 255, 0.9);
+}
+.description-item {
+    margin-top: 10px;
+    font-size: 21px;
+}
+.vertical-center {
+    height: 48px;
+    vertical-align: middle;
+    display: table-cell;
+}
+.divisor-header {
+    width: 100%;
+    height: 10px;
+    background-color: #32779C;
+}
+.footer-block {
+    background-color: #CCCCCC;
+    padding: 10px;
+}
+select.select2 {
+    display: block!important;
+    visibility: visible;
+    position: absolute;
+    top: 0;
+}

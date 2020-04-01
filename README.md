@@ -2,7 +2,7 @@
 
 2.Inclusão de linha no arquivo etc/httpd/conf.d/03_sei.conf - Alias "/solicitacao-candidato" "/opt/clientes/solicitacao-candidato"
 
-3.Criar Sistema no SEI - Sigla: Regular - Nome: Formulário de Regularização
+3.Criar Sistema no SEI - Sigla: Regular - Nome: Formulário de Regularização gerar link acesso externo
 
 4.Dentro de sistema criar serviço - Identificação: formRegularizacaoExterno - Descrição: Formulário de Regularização - Servidores: atribuir ip do servidor
 
@@ -24,7 +24,12 @@ Tipo do Documento: Formulário Transferência de Domicilio Eleitoral
 Tipo da Operação: Incluir Documento
 Unidade: todas
 Tipo do Processo: Tecnologia da informação - Sistema Corporativos
-Tipo do Documento: Comprovante
+Tipo do Documento: Anexo
+
+Tipo da Operação: Incluir Documento
+Unidade: todas
+Tipo do Processo: Tecnologia da informação - Sistema Corporativos
+Tipo do Documento: Requerimento
 
 6.Criar Tipos Documentos
 

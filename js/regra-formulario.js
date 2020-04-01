@@ -1,62 +1,14 @@
-aplicarRegra();
-desfiliacaoRegra();
-
-function aplicarRegra() {
-    var comunicacao = document.getElementById('check-comunicacao');
-    var transferencia = document.getElementById('check-transferencia');
-    var elementosComunicacao= document.querySelectorAll('.comunicacao');
-    var elementosTranferencia = document.querySelectorAll('.transferencia');
-
-    empedirTerCheckedEmBranco(comunicacao, transferencia);
-
-    if (comunicacao.checked) {
-        elementosComunicacao.forEach(elemento => {
-            elemento.style.display = ''
-        });
-    } else {
-        elementosComunicacao.forEach(elemento => {
-            elemento.style.display = 'none'
-        });
-    }
-
-    if (transferencia.checked) {
-        elementosTranferencia.forEach(elemento => {
-            elemento.style.display = ''
-        });
-    } else {
-        elementosTranferencia.forEach(elemento => {
-            elemento.style.display = 'none'
-        });
-    }
-}
-
-function desfiliacaoRegra() {
-    var radioDesfiliacao1 = document.getElementById('radio-desfiliacao1');
-    var comprovanteDesfiliacao = document.querySelectorAll('.desfiliacao');
-
-    if (radioDesfiliacao1.checked) {
-        comprovanteDesfiliacao.forEach(elemento => {
-            elemento.style.display = ''
-        });
-    } else {
-        comprovanteDesfiliacao.forEach(elemento => {
-            elemento.style.display = 'none'
-        });
-    }
-}
-
-function empedirTerCheckedEmBranco(comunicacao, transferencia) {
-    if (!comunicacao.checked && !transferencia.checked) {
-        comunicacao.checked = true;
-    }
-}
-
 function validar() {
     var formulario = document.getElementById('formulario');
-    var comunicacao = document.getElementById('check-comunicacao');
-    var transferencia = document.getElementById('check-transferencia');
-    var buttonSubmit = document.getElementById('button-submit');
-    var alerta = document.getElementById('alerta');
+
+    if (formulario.tituloNet.value === '') {
+        falseLoader();
+        document.getElementById('erro-titulo-net').innerHTML = 'Campo obrigatório';
+        formulario.tituloNet.focus();
+        return false
+    } else {
+        document.getElementById('erro-titulo-net').innerHTML = '';
+    }
 
     if (formulario.titulo.value === '') {
         falseLoader();
@@ -76,6 +28,7 @@ function validar() {
     else {
         document.getElementById('erro-nome').innerHTML = '';
     }
+
     if (formulario.municipio.value === '') {
         falseLoader();
         document.getElementById('erro-municipio').innerHTML = 'Campo obrigatório';
@@ -83,6 +36,22 @@ function validar() {
         return false
     } else {
         document.getElementById('erro-municipio').innerHTML = '';
+    }
+
+    if (formulario.municipioDestino.value === '') {
+        falseLoader();
+        document.getElementById('erro-municipio-destino').innerHTML = 'Campo obrigatório';
+        formulario.municipioDestino.focus();
+        return false
+    } else {
+        document.getElementById('erro-municipio-destino').innerHTML = '';
+    }
+
+    if (formulario.municipio.value === formulario.municipioDestino.value) {
+        falseLoader();
+        alert('Campo Município da Inscrição Eleitoral não pode ser igual ao Município destino');
+        formulario.municipioDestino.focus();
+        return false
     }
 
     if (formulario.telefone.value === '') {
@@ -94,13 +63,13 @@ function validar() {
         document.getElementById('erro-telefone').innerHTML = '';
     }
 
-    if (formulario.email.value === '') {
+    if (formulario.localVotacao.value === '') {
         falseLoader();
-        document.getElementById('erro-email').innerHTML = 'Campo obrigatório';
-        formulario.email.focus();
+        document.getElementById('erro-local-votacao').innerHTML = 'Campo obrigatório';
+        formulario.localVotacao.focus();
         return false
     } else {
-        document.getElementById('erro-email').innerHTML = '';
+        document.getElementById('erro-local-votacao').innerHTML = '';
     }
 
     if (formulario.comprovanteRg.value === '') {
@@ -130,6 +99,15 @@ function validar() {
         document.getElementById('erro-comprante-titulo').innerHTML = '';
     }
 
+    if (formulario.comprovanteEndereco.value === '') {
+        falseLoader();
+        document.getElementById('erro-comprante-endereco').innerHTML = 'Campo obrigatório';
+        formulario.comprovanteEndereco.focus();
+        return false
+    } else {
+        document.getElementById('erro-comprante-endereco').innerHTML = '';
+    }
+
     if (formulario.comprovanteSelfie.value === '') {
         falseLoader();
         document.getElementById('erro-comprante-selfie').innerHTML = 'Campo obrigatório';
@@ -139,91 +117,33 @@ function validar() {
         document.getElementById('erro-comprante-selfie').innerHTML = '';
     }
 
-    if (comunicacao.checked) {
-        if (formulario.partido.value === '') {
-            falseLoader();
-            document.getElementById('erro-partido').innerHTML = 'Campo obrigatório';
-            formulario.partido.focus();
-            return false
-        } else {
-            document.getElementById('erro-partido').innerHTML = '';
-        }
-
-        if (formulario.comprovanteDesfiliacao.value === '' && formulario.desfiliacao.value === 'sim') {
-            falseLoader();
-            document.getElementById('erro-comprante-desfiliacao').innerHTML = 'Campo obrigatório';
-            formulario.comprovanteDesfiliacao.focus();
-            return false
-        } else {
-            document.getElementById('erro-comprante-desfiliacao').innerHTML = '';
-        }
+    if (formulario.endereco.value === '') {
+        falseLoader();
+        document.getElementById('erro-endereco').innerHTML = 'Campo obrigatório';
+        formulario.endereco.focus();
+        return false
+    } else {
+        document.getElementById('erro-endereco').innerHTML = '';
     }
 
-    if (transferencia.checked) {
-        if (formulario.localVotacao.value === '') {
-            falseLoader();
-            document.getElementById('erro-local-votacao').innerHTML = 'Campo obrigatório';
-            formulario.localVotacao.focus();
-            return false
-        } else {
-            document.getElementById('erro-local-votacao').innerHTML = '';
-        }
-
-        if (formulario.comprovanteEndereco.value === '') {
-            falseLoader();
-            document.getElementById('erro-comprante-endereco').innerHTML = 'Campo obrigatório';
-            formulario.comprovanteEndereco.focus();
-            return false
-        } else {
-            document.getElementById('erro-comprante-endereco').innerHTML = '';
-        }
-
-        if (formulario.endereco.value === '') {
-            falseLoader();
-            document.getElementById('erro-endereco').innerHTML = 'Campo obrigatório';
-            formulario.endereco.focus();
-            return false
-        } else {
-            document.getElementById('erro-endereco').innerHTML = '';
-        }
-
-        if (formulario.numero.value === '') {
-            falseLoader();
-            document.getElementById('erro-numero').innerHTML = 'Campo obrigatório';
-            formulario.numero.focus();
-            return false
-        } else {
-            document.getElementById('erro-numero').innerHTML = '';
-        }
-
-        if (formulario.bairro.value === '') {
-            falseLoader();
-            document.getElementById('erro-bairro').innerHTML = 'Campo obrigatório';
-            formulario.bairro.focus();
-            return false
-        } else {
-            document.getElementById('erro-bairro').innerHTML = '';
-        }
-
-        if (formulario.cep.value === '') {
-            falseLoader();
-            document.getElementById('erro-cep').innerHTML = 'Campo obrigatório';
-            formulario.cep.focus();
-            return false
-        } else {
-            document.getElementById('erro-cep').innerHTML = '';
-        }
-
-        if (formulario.cep.value === '') {
-            falseLoader();
-            document.getElementById('erro-cep').innerHTML = 'Campo obrigatório';
-            formulario.cep.focus();
-            return false
-        } else {
-            document.getElementById('erro-cep').innerHTML = '';
-        }
+    if (formulario.numero.value === '') {
+        falseLoader();
+        document.getElementById('erro-numero').innerHTML = 'Campo obrigatório';
+        formulario.numero.focus();
+        return false
+    } else {
+        document.getElementById('erro-numero').innerHTML = '';
     }
-    console.log('aa')
+
+    if (formulario.bairro.value === '') {
+        falseLoader();
+        document.getElementById('erro-bairro').innerHTML = 'Campo obrigatório';
+        formulario.bairro.focus();
+        return false
+    } else {
+        document.getElementById('erro-bairro').innerHTML = '';
+    }
+
     return true
 }
 

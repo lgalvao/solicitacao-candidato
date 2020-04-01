@@ -1,8 +1,6 @@
 <?php
 session_start();
     $acao = 'cadastro_regular';
-    $comunicacao = isset($_POST['comunicacao']) ? true : false;
-    $transferencia = isset($_POST['transferencia']) ? true : false;
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
     $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
@@ -26,15 +24,15 @@ session_start();
     $cep = isset($_POST['cep']) ? $_POST['cep'] : '';
 
     function getAmbiente(){
-        $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
         $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
+        $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
         require_once "database/oracle.php";
 
         $con = DBOracle::Conecta('ADM');
         $sql = "SELECT * from ADMCADTO.MUNICIPIO_ZONA MZ
         INNER JOIN ADMCADTO.ZONA Z
             ON Z.COD_OBJETO = MZ.COD_ZONA
-        WHERE COD_MUNICIPIO = ".$municipio;
+        WHERE COD_MUNICIPIO = ".$municipioDestino;
         $stmt = OCIParse($con, $sql);
         $numeroZona = array();
 
@@ -43,7 +41,7 @@ session_start();
         }
 
         $con = DBOracle::Conecta('ADM');
-        $sql = "SELECT ID_UNIDADE, DESCRICAO from UNIDADE WHERE SIGLA LIKE concat(".$numeroZona[0]['NUM_ZONA'].",'%')";
+        $sql = "SELECT ID_UNIDADE, DESCRICAO from UNIDADE WHERE SIGLA LIKE concat(".$numeroZona[0]['NUM_ZONA'].",'%') ORDER BY SIGLA ASC";
         $stmt = OCIParse($con, $sql);
         $idIunidade = array();
 
@@ -52,7 +50,7 @@ session_start();
         }
 
         $con = DBOracle::Conecta('ADM');
-        $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipio."'";
+        $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipioDestino."'";
         $stmt = OCIParse($con, $sql);
         $descricaoMunicipio = array();
 
@@ -60,40 +58,13 @@ session_start();
             oci_fetch_all($stmt, $descricaoMunicipio, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
         }
 
-        $numIdUnidadeDestino = '';
-        $descricaoMunicipioDestino = array();
-        if ($municipioDestino != '') {
-            $con = DBOracle::Conecta('ADM');
-            $sql = "SELECT * from ADMCADTO.MUNICIPIO_ZONA MZ
-            INNER JOIN ADMCADTO.ZONA Z
-                ON Z.COD_OBJETO = MZ.COD_ZONA
-            WHERE COD_MUNICIPIO = ".$municipioDestino;
-            $stmt = OCIParse($con, $sql);
-            $numeroZona = array();
+        $con = DBOracle::Conecta('ADM');
+        $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipio."'";
+        $stmt = OCIParse($con, $sql);
+        $descricaoMunicipioOrigem = array();
 
-            if(oci_execute($stmt)) {
-                oci_fetch_all($stmt, $numeroZona, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
-            }
-
-            $con = DBOracle::Conecta('ADM');
-            $sql = "SELECT ID_UNIDADE, DESCRICAO from UNIDADE WHERE SIGLA LIKE concat(".$numeroZona[0]['NUM_ZONA'].",'%')";
-            $stmt = OCIParse($con, $sql);
-            $idIunidadeDestino = array();
-
-            if(oci_execute($stmt)) {
-                oci_fetch_all($stmt, $idIunidadeDestino, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
-            }
-
-            $con = DBOracle::Conecta('ADM');
-            $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipioDestino."'";
-            $stmt = OCIParse($con, $sql);
-            $descricaoMunicipioDestino = array();
-
-            if(oci_execute($stmt)) {
-                oci_fetch_all($stmt, $descricaoMunicipioDestino, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
-            }
-
-            $numIdUnidadeDestino = $idIunidadeDestino[0]['ID_UNIDADE'];
+        if(oci_execute($stmt)) {
+            oci_fetch_all($stmt, $descricaoMunicipioOrigem, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
         }
 
         $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
@@ -101,13 +72,12 @@ session_start();
         if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br') {
             return array(
                 "idTipoProcedimento"=>100000899,
-                "idSerie"=>50188,
-                "idSerie2"=>50189,
-                "idSerie3"=>330,
+                "idSerie"=>50189,
+                "idSerie2"=>293,
+                "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
-                "zonaDescricao"=>$descricaoMunicipio[0]['NOM_LOCALIDADE'],
-                "numIdUnidadeDestino"=>$numIdUnidadeDestino != '' ? $numIdUnidadeDestino : '' ,
-                "zonaDescricaoDestino"=>count($descricaoMunicipioDestino) > 0 ? $descricaoMunicipioDestino[0]['NOM_LOCALIDADE'] : '',
+                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
         }
@@ -115,13 +85,12 @@ session_start();
         if ($_SERVER['SERVER_NAME'] == 'sei.tre-to.jus.br') {
             return array(
                 "idTipoProcedimento"=>100000899,
-                "idSerie"=>50188,
-                "idSerie2"=>50189,
-                "idSerie3"=>330,
+                "idSerie"=>50189,
+                "idSerie2"=>293,
+                "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
-                "zonaDescricao"=>$descricaoMunicipio[0]['NOM_LOCALIDADE'],
-                "numIdUnidadeDestino"=>$numIdUnidadeDestino != '' ? $numIdUnidadeDestino : '' ,
-                "zonaDescricaoDestino"=>count($descricaoMunicipioDestino) > 0 ? $descricaoMunicipioDestino[0]['NOM_LOCALIDADE'] : '',
+                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
         }
@@ -138,7 +107,6 @@ session_start();
     $Descricao = 'Formulário de Regularização.';
 
     $numIdUnidade =  getAmbiente()["numIdUnidade"];
-    $numIdUnidadeDestino =  getAmbiente()["numIdUnidadeDestino"];
     $UnidadesEnvio = array();
 
     date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
@@ -173,14 +141,6 @@ session_start();
         $dir = 'uploads/'; //Diretório para uploads
 
         move_uploaded_file($comprovanteSelfie['tmp_name'], $dir.$comprovante_selfie_name); //Fazer upload do arquivo
-    }
-
-    if($comprovanteDesfiliacao['name'] !== '') {
-        $ext = '.'.strtolower(pathinfo($comprovanteDesfiliacao['name'], PATHINFO_EXTENSION)); //Pegando extensão do arquivo
-        $comprovante_desfiliacao_name = "comprovate_desfiliacao".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-        $dir = 'uploads/'; //Diretório para uploads
-
-        move_uploaded_file($comprovanteDesfiliacao['tmp_name'], $dir.$comprovante_desfiliacao_name); //Fazer upload do arquivo
     }
 
     if($comprovanteEndereco['name'] !== '') {
