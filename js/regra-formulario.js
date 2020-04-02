@@ -29,14 +29,14 @@ function validar() {
         document.getElementById('erro-nome').innerHTML = '';
     }
 
-    if (formulario.municipio.value === '') {
-        falseLoader();
-        document.getElementById('erro-municipio').innerHTML = 'Campo obrigatório';
-        formulario.municipio.focus();
-        return false
-    } else {
-        document.getElementById('erro-municipio').innerHTML = '';
-    }
+    // if (formulario.municipio.value === '') {
+    //     falseLoader();
+    //     document.getElementById('erro-municipio').innerHTML = 'Campo obrigatório';
+    //     formulario.municipio.focus();
+    //     return false
+    // } else {
+    //     document.getElementById('erro-municipio').innerHTML = '';
+    // }
 
     if (formulario.municipioDestino.value === '') {
         falseLoader();
