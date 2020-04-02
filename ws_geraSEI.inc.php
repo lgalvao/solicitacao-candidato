@@ -28,6 +28,7 @@ $Procedimento['Assuntos'] = $arrAssuntos;
 $autoridade = array('Sigla' => $email, 'Nome' => $nome);
 
 $arrInteressados = array();
+$arrInteressados[] = array('Sigla' => '', 'Nome' => $municipio);
 $arrInteressados[] = $autoridade;
 
 $Procedimento['Interessados'] = $arrInteressados;
@@ -37,6 +38,7 @@ $Procedimento['Observacao'] = null;
 $Procedimento['NivelAcesso'] = null;
 
 $documentos = [];
+
 
 $DocumentoGerado2 = array();
 $DocumentoGerado2['Tipo'] = 'G';
@@ -103,7 +105,11 @@ if (isset($comprovante_rg_name)) {
 	$DocumentoRecebido['Numero'] = '1000';
 	$DocumentoRecebido['Data'] = date("d/m/Y");;
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
-	$DocumentoRecebido['Remetente'] = $arrInteressados;
+	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
+
+	$arrInteressados = array();
+	$arrInteressados[] = array('Sigla'=>'rub', 'Nome' => 'Roberto');
+	$arrInteressados[] = array('Sigla'=>'nay', 'Nome' => 'Nadir');
 
 	$DocumentoRecebido['Interessados'] = $arrInteressados;
 	$DocumentoRecebido['Destinatarios'] = null;
@@ -124,7 +130,11 @@ if (isset($comprovante_cpf_name)) {
 	$DocumentoRecebido['Numero'] = '1000';
 	$DocumentoRecebido['Data'] = date("d/m/Y");;
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
-	$DocumentoRecebido['Remetente'] = $arrInteressados;
+	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
+
+	$arrInteressados = array();
+	$arrInteressados[] = array('Sigla'=>'rub', 'Nome' => 'Roberto');
+	$arrInteressados[] = array('Sigla'=>'nay', 'Nome' => 'Nadir');
 
 	$DocumentoRecebido['Interessados'] = $arrInteressados;
 	$DocumentoRecebido['Destinatarios'] = null;
@@ -145,7 +155,11 @@ if (isset($comprovante_titulo_name)) {
 	$DocumentoRecebido['Numero'] = '1000';
 	$DocumentoRecebido['Data'] = date("d/m/Y");;
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
-	$DocumentoRecebido['Remetente'] = $arrInteressados;
+	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
+
+	$arrInteressados = array();
+	$arrInteressados[] = array('Sigla'=>'rub', 'Nome' => 'Roberto');
+	$arrInteressados[] = array('Sigla'=>'nay', 'Nome' => 'Nadir');
 
 	$DocumentoRecebido['Interessados'] = $arrInteressados;
 	$DocumentoRecebido['Destinatarios'] = null;
@@ -166,7 +180,11 @@ if (isset($comprovante_selfie_name)) {
 	$DocumentoRecebido['Numero'] = '1000';
 	$DocumentoRecebido['Data'] = date("d/m/Y");;
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
-	$DocumentoRecebido['Remetente'] = $arrInteressados;
+	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
+
+	$arrInteressados = array();
+	$arrInteressados[] = array('Sigla'=>'rub', 'Nome' => 'Roberto');
+	$arrInteressados[] = array('Sigla'=>'nay', 'Nome' => 'Nadir');
 
 	$DocumentoRecebido['Interessados'] = $arrInteressados;
 	$DocumentoRecebido['Destinatarios'] = null;
@@ -187,7 +205,11 @@ if (isset($comprovante_endereco_name)) {
 	$DocumentoRecebido['Numero'] = '1000';
 	$DocumentoRecebido['Data'] = date("d/m/Y");
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
-	$DocumentoRecebido['Remetente'] = $arrInteressados;
+	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
+
+	$arrInteressados = array();
+	$arrInteressados[] = array('Sigla'=>'rub', 'Nome' => 'Roberto');
+	$arrInteressados[] = array('Sigla'=>'nay', 'Nome' => 'Nadir');
 
 	$DocumentoRecebido['Interessados'] = $arrInteressados;
 	$DocumentoRecebido['Destinatarios'] = null;
