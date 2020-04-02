@@ -78,7 +78,6 @@ $DocumentoGerado['Remetente'] = null;
 
 //Mantem o array Interessados ja criado acima
 
-$arrInteressados = array();
 $DocumentoGerado['Interessados'] = $arrInteressados;
 
 //Usado somente em alguns tipos, mas necessário para o webservice
