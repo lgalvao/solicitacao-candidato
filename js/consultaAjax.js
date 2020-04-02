@@ -1,13 +1,13 @@
 carregarMunicipios();
 
 function carregarMunicipios() {
-    var selectMunicipio = document.getElementById('select-municipio');
+    // var selectMunicipio = document.getElementById('select-municipio');
     var selectMunicipioDestino = document.getElementById('select-municipio-destino');
     $.ajax({
         url: "/solicitacao-candidato/database/municipio.php",
         success: function(result) {
             result.forEach(mun => {
-                selectMunicipio.innerHTML += `<option value="${mun.COD_OBJETO}">${mun.NOM_LOCALIDADE}</option>`;
+                // selectMunicipio.innerHTML += `<option value="${mun.COD_OBJETO}">${mun.NOM_LOCALIDADE}</option>`;
                 selectMunicipioDestino.innerHTML += `<option value="${mun.COD_OBJETO}">${mun.NOM_LOCALIDADE}</option>`;
             });
         }

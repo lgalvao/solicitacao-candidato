@@ -49,13 +49,13 @@ $chave_acao = "cadastro_regular";
                                 <input class=" form-control form-control-sm" type="text" name="nome" id="input-nome">
                                 <p class="error" id="erro-nome"></p>
                             </div>
-                            <div class="form-group">
-                                <label class="font-weight-bold" for="select-municipio">Município da Inscrição Eleitoral</label>
-                                <select id="select-municipio" class=" form-control form-control-sm" name="municipio">
-                                    <option value="" selected>Escolha...</option>
-                                </select>
-                                <p class="error" id="erro-municipio"></p>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label class="font-weight-bold" for="select-municipio">Município da Inscrição Eleitoral</label>-->
+<!--                                <select id="select-municipio" class=" form-control form-control-sm" name="municipio">-->
+<!--                                    <option value="" selected>Escolha...</option>-->
+<!--                                </select>-->
+<!--                                <p class="error" id="erro-municipio"></p>-->
+<!--                            </div>-->
                             <div class="form-group">
                                 <label class="font-weight-bold" for="select-municipio-destino">Município destino</label>
                                 <select id="select-municipio-destino" class=" form-control form-control-sm" name="municipioDestino" onchange="carregarLocalVotacao()">

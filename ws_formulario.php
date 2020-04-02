@@ -59,14 +59,14 @@ session_start();
             oci_fetch_all($stmt, $descricaoMunicipio, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
         }
 
-        $con = DBOracle::Conecta('ADM');
-        $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipio."'";
-        $stmt = OCIParse($con, $sql);
-        $descricaoMunicipioOrigem = array();
-
-        if(oci_execute($stmt)) {
-            oci_fetch_all($stmt, $descricaoMunicipioOrigem, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
-        }
+//        $con = DBOracle::Conecta('ADM');
+//        $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipio."'";
+//        $stmt = OCIParse($con, $sql);
+//        $descricaoMunicipioOrigem = array();
+//
+//        if(oci_execute($stmt)) {
+//            oci_fetch_all($stmt, $descricaoMunicipioOrigem, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
+//        }
 
         $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
 
@@ -77,9 +77,22 @@ session_start();
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
-                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+//                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
+            );
+        }
+
+        if ($_SERVER['SERVER_NAME'] == 'sei-hom.tre-to.jus.br') {
+            return array(
+                "idTipoProcedimento"=>100000749,
+                "idSerie"=>50108,
+                "idSerie2"=>293,
+                "idSerie3"=>295,
+                "numIdUnidade"=>$numIdUnidade,
+//                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "strWSDL"=>"https://sei-hom.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
         }
 
@@ -90,7 +103,7 @@ session_start();
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
-                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+//                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
