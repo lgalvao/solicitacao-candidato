@@ -83,6 +83,19 @@ session_start();
             );
         }
 
+        if ($_SERVER['SERVER_NAME'] == 'sei-hom.tre-to.jus.br') {
+            return array(
+                "idTipoProcedimento"=>100000749,
+                "idSerie"=>50108,
+                "idSerie2"=>293,
+                "idSerie3"=>295,
+                "numIdUnidade"=>$numIdUnidade,
+//                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "strWSDL"=>"https://sei-hom.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
+            );
+        }
+
         if ($_SERVER['SERVER_NAME'] == 'sei.tre-to.jus.br') {
             return array(
                 "idTipoProcedimento"=>100000749,
