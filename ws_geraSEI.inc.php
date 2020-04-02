@@ -50,8 +50,6 @@ $DocumentoGerado2['Remetente'] = null;
 //Mantem o array Interessados ja criado acima
 $DocumentoGerado2['Interessados'] = $arrInteressados;
 
-var_dump($DocumentoGerado2['Interessados'] );
-
 //Usado somente em alguns tipos, mas necessário para o webservice
 $arrDestinatarios = array();
 $DocumentoGerado2['Destinatarios'] = $arrDestinatarios;
@@ -216,8 +214,6 @@ if (isset($comprovante_endereco_name)) {
 
 	array_push($documentos, $DocumentoRecebido);
 }
-    var_dump($documentos[0]);
-    die();
     $ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, $numIdUnidade, $Procedimento, $documentos, array(), $UnidadesEnvio);
 
 
