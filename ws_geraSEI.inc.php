@@ -220,7 +220,8 @@ if (isset($comprovante_endereco_name)) {
 
 	array_push($documentos, $DocumentoRecebido);
 }
-
+    var_dump($documentos);
+    die();
     $ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, $numIdUnidade, $Procedimento, $documentos, array(), $UnidadesEnvio);
 
 
