@@ -82,7 +82,9 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 <select id="select-municipio-destino" class=" form-control form-control-sm" name="municipioDestino">
                                     <option value="" selected>Escolha...</option>
                                 </select>
-                                <p class="error" id="erro-municipio-destino"></p>
+                                <p class="error" id="erro-municipio-destino">
+                                    <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['municipioDestino'] == "nome" ? "Campo obrigatório" : ""; ?>
+                                </p>
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-telefone">Telefone</label>

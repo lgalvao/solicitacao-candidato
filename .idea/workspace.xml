@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/js/regra-formulario.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/regra-formulario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/formulario.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,8 @@
       <workItem from="1585844479940" duration="7204000" />
       <workItem from="1585861528010" duration="184000" />
       <workItem from="1585861941447" duration="207000" />
-      <workItem from="1585917386155" duration="15013000" />
+      <workItem from="1585917386155" duration="16082000" />
+      <workItem from="1585940315813" duration="525000" />
     </task>
     <servers />
   </component>
@@ -87,10 +89,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Deployment/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585834424775" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585853845948">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585938433938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585853845948" />
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585938433938" />
     <state x="463" y="165" key="SettingsEditor" timestamp="1585832159588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
