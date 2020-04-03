@@ -34,6 +34,7 @@ session_start();
     if ($titulo === '') {
         $erro = 'Preencha o campo Título';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
 
     if ($tituloNet === '') {
