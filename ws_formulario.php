@@ -6,14 +6,75 @@ session_start();
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
     $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
     $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
-    $whatsapp = isset($_POST['whatsapp']) ? 'sim' : 'no';
+    $whatsapp = isset($_POST['whatsapp']) ? 'sim' : 'não';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $necessidadeEspecial = isset($_POST['necessidadeEspecial']) ? 'sim' : 'no';
+    $necessidadeEspecial = isset($_POST['necessidadeEspecial']) ? 'sim' : 'não';
     $comprovanteRg = isset($_FILES['comprovanteRg']) ? $_FILES['comprovanteRg'] : '';
     $comprovanteCpf = isset($_FILES['comprovanteCpf']) ? $_FILES['comprovanteCpf'] : '';
     $comprovanteTitulo = isset($_FILES['comprovanteTitulo']) ? $_FILES['comprovanteTitulo'] : '';
     $comprovanteEndereco = isset($_FILES['comprovanteEndereco']) ? $_FILES['comprovanteEndereco'] : '';
     $comprovanteSelfie = isset($_FILES['comprovanteSelfie']) ? $_FILES['comprovanteSelfie'] : '';
+
+    $data = [
+        'titulo' => $titulo,
+        'tituloNet' => $tituloNet,
+        'nome' => $nome,
+        'municipioDestino' => $municipioDestino,
+        'telefone' => $telefone,
+        'whatsapp' => $whatsapp,
+        'email' => $email,
+        'necessidadeEspecial' => $necessidadeEspecial,
+        'compravanteRg' => $comprovanteRg,
+        'compravanteCpf' => $comprovanteCpf,
+        'comprovanteTitulo' => $comprovanteTitulo,
+        'comprovanteEndereco' => $comprovanteEndereco,
+        'comprovanteSelfie' => $comprovanteSelfie,
+    ];
+
+    if ($titulo === '') {
+        $erro = 'Preencha o campo Título';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+
+    if ($tituloNet === '') {
+        $erro = 'Preencha o campo Título Net';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+
+    if ($nome === '') {
+        $erro = 'Preencha o campo Nome';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+
+    if ($municipioDestino === '') {
+        $erro = 'Escolha um Município de destino';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+    if ($telefone === '') {
+        $erro = 'Preencha o campo Telefone';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+    if ($comprovanteRg === '') {
+        $erro = 'Preencha o campo Comprovante de Rg';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+    if ($comprovanteCpf === '') {
+        $erro = 'Preencha o campo Comprovante de CPF';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+    if ($comprovanteTitulo === '') {
+        $erro = 'Preencha o campo Comprovante de Título';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+
+    if ($comprovanteEndereco === '') {
+        $erro = 'Preencha o campo Comprovante de Endereço';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
+    if ($comprovanteSelfie === '') {
+        $erro = 'Preencha o campo Comprovante de Selfie';
+        header("Location:formulario.php?data=".$data."&erro=".$erro);
+    }
 
     function getAmbiente(){
         $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';

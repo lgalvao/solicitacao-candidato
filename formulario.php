@@ -9,6 +9,8 @@ $path_servico = "ws_formulario.php";
 // CONFIG CHAVE DA ACAO DO FORMULARIO:
 $chave_acao = "cadastro_regular";
 
+var_dump($_GET['erro']);
+var_dump($_GET['data']);
 ?>
 
 <!DOCTYPE html>
