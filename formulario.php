@@ -43,24 +43,32 @@ var_dump($_SESSION['data']);
                             <h5 class="card-title">Dados Cadastrais</h5>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-titulo-net">Protocolo Título Net</label>
-                                <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net" <?php echo isset($_SESSION['data']['tituloNet']) ? 'value="'.$_SESSION['data']['tituloNet'].'"' : ''; ?>>
+                                <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net"
+                                    <?php echo isset($_SESSION['data']['tituloNet']) ? 'value="'.$_SESSION['data']['tituloNet'].'"' : ''; ?>>
                                 <p class="error" id="erro-titulo-net">
                                     <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['campo'] == "tituloNet" ? "Campo obrigatório" : ""; ?>
                                 </p>
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-titulo">Título Eleitoral</label>
-                                <input class=" form-control form-control-sm" type="text" name="titulo" id="input-titulo">
-                                <p class="error" id="erro-titulo"></p>
+                                <input class=" form-control form-control-sm" type="text" name="titulo" id="input-titulo"
+                                    <?php echo isset($_SESSION['data']['titulo']) ? 'value="'.$_SESSION['data']['titulo'].'"' : ''; ?>>
+                                <p class="error" id="erro-titulo">
+                                    <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['campo'] == "titulo" ? "Campo obrigatório" : ""; ?>
+                                </p>
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-nome">Nome</label>
-                                <input class=" form-control form-control-sm" type="text" name="nome" id="input-nome">
-                                <p class="error" id="erro-nome"></p>
+                                <input class=" form-control form-control-sm" type="text" name="nome" id="input-nome"
+                                    <?php echo isset($_SESSION['data']['nome']) ? 'value="'.$_SESSION['data']['nome'].'"' : ''; ?>>
+                                <p class="error" id="erro-nome">
+                                    <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['campo'] == "nome" ? "Campo obrigatório" : ""; ?>
+                                </p>
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="select-municipio-destino">Município destino</label>
-                                <select id="select-municipio-destino" class=" form-control form-control-sm" name="municipioDestino">
+                                <select id="select-municipio-destino" class=" form-control form-control-sm" name="municipioDestino"
+                                    <?php echo isset($_SESSION['data']['municipioDestino']) ?  : 'onload="buscarMunicipio('.$_SESSION['data']['municipioDestino'].')"'; ?>>
                                     <option value="" selected>Escolha...</option>
                                 </select>
                                 <p class="error" id="erro-municipio-destino"></p>
