@@ -13,6 +13,7 @@ function carregarMunicipios() {
 }
 
 function buscarMunicipio(cod) {
+    console.log(cod);
     var selectMunicipioDestino = document.getElementById('select-municipio-destino');
     $.ajax({
         url: "/solicitacao-candidato/database/municipio.php",
