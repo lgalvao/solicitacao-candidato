@@ -81,7 +81,7 @@ var_dump($_SESSION['data']);
                                 </p>
                                 <div class="form-check">
                                     <input class="form-check-input" name="whatsapp" type="checkbox" id="check-whatszapp" value="true"
-                                        <?php echo isset($_SESSION['data']['whatsapp']) ? 'checked' : ''; ?>>
+                                        <?php echo isset($_SESSION['data']['whatsapp']) && $_SESSION['data']['whatsapp'] == 'sim' ? 'checked' : ''; ?>>
                                     <label class="form-check-label" for="check-whatszapp">
                                         O telefone é WhatsApp?
                                     </label>
@@ -96,7 +96,7 @@ var_dump($_SESSION['data']);
                             <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" name="necessidadeEspecial" type="checkbox" value="true" id="check-necessidade-especial"
-                                        <?php echo isset($_SESSION['data']['necessidadeEspecial']) ? 'checked' : ''; ?>>
+                                        <?php echo isset($_SESSION['data']['necessidadeEspecial']) && $_SESSION['data']['necessidadeEspecial'] == 'sim' ? 'checked' : ''; ?>>
                                     <label class="form-check-label font-weight-bold" for="check-necessidade-especial">
                                         Necessita Atendimento Especial
                                     </label>
