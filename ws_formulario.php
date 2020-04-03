@@ -9,11 +9,11 @@ session_start();
     $whatsapp = isset($_POST['whatsapp']) ? 'sim' : 'não';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $necessidadeEspecial = isset($_POST['necessidadeEspecial']) ? 'sim' : 'não';
-    $comprovanteRg = isset($_FILES['comprovanteRg']) ? $_FILES['comprovanteRg'] : '';
-    $comprovanteCpf = isset($_FILES['comprovanteCpf']) ? $_FILES['comprovanteCpf'] : '';
-    $comprovanteTitulo = isset($_FILES['comprovanteTitulo']) ? $_FILES['comprovanteTitulo'] : '';
-    $comprovanteEndereco = isset($_FILES['comprovanteEndereco']) ? $_FILES['comprovanteEndereco'] : '';
-    $comprovanteSelfie = isset($_FILES['comprovanteSelfie']) ? $_FILES['comprovanteSelfie'] : '';
+    $comprovanteRg = isset($_FILES['comprovanteRg']['size']) > 0 ? $_FILES['comprovanteRg'] : '';
+    $comprovanteCpf = isset($_FILES['comprovanteCpf']['size']) > 0 ? $_FILES['comprovanteCpf'] : '';
+    $comprovanteTitulo = isset($_FILES['comprovanteTitulo']['size']) > 0 ? $_FILES['comprovanteTitulo'] : '';
+    $comprovanteEndereco = isset($_FILES['comprovanteEndereco']['size']) > 0 ? $_FILES['comprovanteEndereco'] : '';
+    $comprovanteSelfie = isset($_FILES['comprovanteSelfie']['size']) > 0 ? $_FILES['comprovanteSelfie'] : '';
 
     $data = [
         'titulo' => $titulo,
