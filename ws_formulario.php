@@ -15,6 +15,9 @@ session_start();
     $comprovanteEndereco = isset($_FILES['comprovanteEndereco']['size']) > 0 ? $_FILES['comprovanteEndereco'] : '';
     $comprovanteSelfie = isset($_FILES['comprovanteSelfie']['size']) > 0 ? $_FILES['comprovanteSelfie'] : '';
 
+    var_dump($_FILES['comprovanteRg']);
+    die();
+
     $data = [
         'titulo' => $titulo,
         'tituloNet' => $tituloNet,
