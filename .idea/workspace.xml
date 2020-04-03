@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/formulario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ws_formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_formulario.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +77,7 @@
       <workItem from="1585844479940" duration="7204000" />
       <workItem from="1585861528010" duration="184000" />
       <workItem from="1585861941447" duration="207000" />
-      <workItem from="1585917386155" duration="5243000" />
+      <workItem from="1585917386155" duration="7128000" />
     </task>
     <servers />
   </component>
@@ -96,10 +97,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585832159588" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1585924988820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585924988820" />
     <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585917387783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="347" key="com.intellij.ide.util.TipDialog/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585917387783" />
+    <state x="1920" y="0" width="1456" height="737" key="dock-window-1" timestamp="1585925412966">
+      <screen x="1920" y="0" width="1440" height="860" />
+    </state>
+    <state x="1920" y="0" width="1456" height="737" key="dock-window-1/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585925412966" />
     <state x="845" y="250" key="ftp.server.browser" timestamp="1585834422078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

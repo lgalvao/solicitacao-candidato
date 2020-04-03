@@ -24,7 +24,7 @@ var_dump($_SESSION['data']);
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
             <img src="img/tre-to.png" width="370" height="80" class="d-inline-block align-top" alt="tre-to">
         </a>
     </nav>
@@ -38,8 +38,10 @@ var_dump($_SESSION['data']);
                             <h5 class="card-title">Dados Cadastrais</h5>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-titulo-net">Protocolo Título Net</label>
-                                <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net">
-                                <p class="error" id="erro-titulo-net"></p>
+                                <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net" <?php isset($_SESSION['data']['titulo']) ? "value=".$_SESSION['data']['titulo'] : ""; ?>>
+                                <p class="error" id="erro-titulo-net">
+                                    <?php isset($_SESSION['error']['campo']) == "tituloNet" ? "Campo obrigatório" : ""; ?>
+                                </p>
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-titulo">Título Eleitoral</label>

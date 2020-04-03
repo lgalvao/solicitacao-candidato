@@ -32,58 +32,97 @@ session_start();
     ];
 
     if ($tituloNet === '') {
-        $erro = 'Preencha o campo Título Net';
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Título Net',
+            'campo' => 'titutoNet'
+        ];
         $_SESSION['data'] = $data;
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        header("Location:formulario.php");
         die();
     }
 
     if ($titulo === '') {
-        $erro = 'Preencha o campo Título Eleitoral';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Título Eleitoral',
+            'campo' => 'titulo'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
 
     if ($nome === '') {
-        $erro = 'Preencha o campo Nome';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Nome',
+            'campo' => 'nome'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
 
     if ($municipioDestino === '') {
-        $erro = 'Escolha um Município de destino';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Escolha um Município de destino',
+            'campo' => 'municipioDestino'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
     if ($telefone === '') {
-        $erro = 'Preencha o campo Telefone';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Telefone',
+            'campo' => 'telefone'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
     if ($comprovanteRg['size'] == 0) {
-        $erro = 'Preencha o campo Comprovante de Rg';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Comprovante de RG',
+            'campo' => 'comprovanteRg'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
     if ($comprovanteCpf['size'] == 0) {
-        $erro = 'Preencha o campo Comprovante de CPF';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Comprovante de CPF',
+            'campo' => 'comprovanteCpf'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
     if ($comprovanteTitulo['size'] == 0) {
-        $erro = 'Preencha o campo Comprovante de Título de eleitor';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Comprovante de Título de eleitor',
+            'campo' => 'comprovanteTitulo'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
 
     if ($comprovanteEndereco['size'] == 0) {
-        $erro = 'Preencha o campo Comprovante de Endereço';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Comprovante de Endereço',
+            'campo' => 'comprovanteEndereco'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
     if ($comprovanteSelfie['size'] == 0) {
-        $erro = 'Preencha o campo Comprovante de Selfie';
-        header("Location:formulario.php?data=".$data."&erro=".$erro);
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Comprovante de Selfie',
+            'campo' => 'comprovanteSelfie'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
         die();
     }
 
