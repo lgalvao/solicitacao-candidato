@@ -36,8 +36,8 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
         <form onsubmit="return validar()" id="formulario" method="POST" action="ws_formulario.php" enctype="multipart/form-data">
             <div class="row">
                 <?php
-                    if (isset($_SESSION['error']['campo'])
-                        && $_SESSION['error']['campo'] == 'comprovanteRg'
+                if (isset($_SESSION['error']['campo'])) {
+                    if ($_SESSION['error']['campo'] == 'comprovanteRg'
                         || $_SESSION['error']['campo'] == 'comprovanteCpf'
                         || $_SESSION['error']['campo'] == 'comprovanteTitulo'
                         || $_SESSION['error']['campo'] == 'comprovanteEndereco'
@@ -48,7 +48,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 Verifique se todos os Comprovantes foram anexados.
                             </div>
                         </div>
-                <?php } ?>
+                <?php } }?>
                 <div class="col-md-6">
                     <div class="card mt-2">
                         <div class="card-body">
