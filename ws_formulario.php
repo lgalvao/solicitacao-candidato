@@ -34,7 +34,7 @@ session_start();
     if ($tituloNet === '') {
         $_SESSION['error'] = [
             'messagem' => 'Preencha o campo Título Net',
-            'campo' => 'titutoNet'
+            'campo' => 'tituloNet'
         ];
         $_SESSION['data'] = $data;
         header("Location:formulario.php");
