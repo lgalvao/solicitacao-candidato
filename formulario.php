@@ -13,8 +13,6 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
     $_SESSION['error'] = [];
     $_SESSION['data'] = [];
 }
-var_dump($_SESSION['error']);
-var_dump($_SESSION['data']);
 
 ?>
 
