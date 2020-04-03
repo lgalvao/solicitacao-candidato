@@ -1,8 +1,6 @@
 function validar() {
     var formulario = document.getElementById('formulario');
 
-    console.log(formulario.comprovanteRg);
-
     if (formulario.tituloNet.value === '') {
         falseLoader();
         document.getElementById('erro-titulo-net').innerHTML = 'Campo obrigatório';
@@ -49,50 +47,50 @@ function validar() {
         document.getElementById('erro-telefone').innerHTML = '';
     }
 
-    // if (formulario.comprovanteRg.value === '') {
-    //     falseLoader();
-    //     document.getElementById('erro-comprante-rg').innerHTML = 'Campo obrigatório';
-    //     formulario.comprovanteRg.focus();
-    //     return false
-    // } else {
-    //     document.getElementById('erro-comprante-rg').innerHTML = '';
-    // }
+    if (formulario.comprovanteRg.value === '') {
+        falseLoader();
+        document.getElementById('erro-comprante-rg').innerHTML = 'Campo obrigatório';
+        formulario.comprovanteRg.focus();
+        return false
+    } else {
+        document.getElementById('erro-comprante-rg').innerHTML = '';
+    }
 
-    // if (formulario.comprovanteCpf.value === '') {
-    //     falseLoader();
-    //     document.getElementById('erro-comprante-cpf').innerHTML = 'Campo obrigatório';
-    //     formulario.comprovanteCpf.focus();
-    //     return false
-    // } else {
-    //     document.getElementById('erro-comprante-cpf').innerHTML = '';
-    // }
-    //
-    // if (formulario.comprovanteTitulo.value === '') {
-    //     falseLoader();
-    //     document.getElementById('erro-comprante-titulo').innerHTML = 'Campo obrigatório';
-    //     formulario.comprovanteTitulo.focus();
-    //     return false
-    // } else {
-    //     document.getElementById('erro-comprante-titulo').innerHTML = '';
-    // }
-    //
-    // if (formulario.comprovanteEndereco.value === '') {
-    //     falseLoader();
-    //     document.getElementById('erro-comprante-endereco').innerHTML = 'Campo obrigatório';
-    //     formulario.comprovanteEndereco.focus();
-    //     return false
-    // } else {
-    //     document.getElementById('erro-comprante-endereco').innerHTML = '';
-    // }
-    //
-    // if (formulario.comprovanteSelfie.value === '') {
-    //     falseLoader();
-    //     document.getElementById('erro-comprante-selfie').innerHTML = 'Campo obrigatório';
-    //     formulario.comprovanteSelfie.focus();
-    //     return false
-    // } else {
-    //     document.getElementById('erro-comprante-selfie').innerHTML = '';
-    // }
+    if (formulario.comprovanteCpf.value === '') {
+        falseLoader();
+        document.getElementById('erro-comprante-cpf').innerHTML = 'Campo obrigatório';
+        formulario.comprovanteCpf.focus();
+        return false
+    } else {
+        document.getElementById('erro-comprante-cpf').innerHTML = '';
+    }
+
+    if (formulario.comprovanteTitulo.value === '') {
+        falseLoader();
+        document.getElementById('erro-comprante-titulo').innerHTML = 'Campo obrigatório';
+        formulario.comprovanteTitulo.focus();
+        return false
+    } else {
+        document.getElementById('erro-comprante-titulo').innerHTML = '';
+    }
+
+    if (formulario.comprovanteEndereco.value === '') {
+        falseLoader();
+        document.getElementById('erro-comprante-endereco').innerHTML = 'Campo obrigatório';
+        formulario.comprovanteEndereco.focus();
+        return false
+    } else {
+        document.getElementById('erro-comprante-endereco').innerHTML = '';
+    }
+
+    if (formulario.comprovanteSelfie.value === '') {
+        falseLoader();
+        document.getElementById('erro-comprante-selfie').innerHTML = 'Campo obrigatório';
+        formulario.comprovanteSelfie.focus();
+        return false
+    } else {
+        document.getElementById('erro-comprante-selfie').innerHTML = '';
+    }
 
     return true
 }
