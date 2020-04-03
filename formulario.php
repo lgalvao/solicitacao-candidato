@@ -37,6 +37,20 @@ var_dump($_SESSION['data']);
     <div class="container mt-4">
         <form onsubmit="return validar()" id="formulario" method="POST" action="ws_formulario.php" enctype="multipart/form-data">
             <div class="row">
+                <?php
+                    if (isset($_SESSION['error']['campo'])
+                        && $_SESSION['error']['campo'] == 'comprovanteRg'
+                        || $_SESSION['error']['campo'] == 'comprovanteCpf'
+                        || $_SESSION['error']['campo'] == 'comprovanteTitulo'
+                        || $_SESSION['error']['campo'] == 'comprovanteEndereco'
+                        || $_SESSION['error']['campo'] == 'comprovanteSelfie') {
+                    ?>
+                        <div class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                Verifique se todos os Comprovantes foram anexados.
+                            </div>
+                        </div>
+                <?php } ?>
                 <div class="col-md-6">
                     <div class="card mt-2">
                         <div class="card-body">
