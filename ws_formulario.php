@@ -15,9 +15,6 @@ session_start();
     $comprovanteEndereco = isset($_FILES['comprovanteEndereco']['size']) > 0 ? $_FILES['comprovanteEndereco'] : '';
     $comprovanteSelfie = isset($_FILES['comprovanteSelfie']['size']) > 0 ? $_FILES['comprovanteSelfie'] : '';
 
-    var_dump($_FILES['comprovanteRg']);
-    die();
-
     $data = [
         'titulo' => $titulo,
         'tituloNet' => $tituloNet,
@@ -62,28 +59,28 @@ session_start();
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
     }
-    if ($comprovanteRg === '') {
+    if ($comprovanteRg['size'] == 0) {
         $erro = 'Preencha o campo Comprovante de Rg';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
     }
-    if ($comprovanteCpf === '') {
+    if ($comprovanteCpf['size'] == 0) {
         $erro = 'Preencha o campo Comprovante de CPF';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
     }
-    if ($comprovanteTitulo === '') {
+    if ($comprovanteTitulo['size'] == 0) {
         $erro = 'Preencha o campo Comprovante de Título';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
     }
 
-    if ($comprovanteEndereco === '') {
+    if ($comprovanteEndereco['size'] == 0) {
         $erro = 'Preencha o campo Comprovante de Endereço';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
     }
-    if ($comprovanteSelfie === '') {
+    if ($comprovanteSelfie['size'] == 0) {
         $erro = 'Preencha o campo Comprovante de Selfie';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
