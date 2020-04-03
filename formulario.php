@@ -112,7 +112,8 @@ var_dump($_SESSION['data']);
                             <div class="form-group">
                                 <label class="font-weight-bold w-100" for="file-rg">
                                     Cópia digitalizada do RG
-                                    <input class=" form-control form-control-sm" type="file" name="comprovanteRg" id="file-rg" accept=".pdf,.jpg,.png" style="height: 37px">
+                                    <input class=" form-control form-control-sm" type="file" name="comprovanteRg" id="file-rg" accept=".pdf,.jpg,.png" style="height: 37px"
+                                        <?php echo isset($_SESSION['data']['email']) ? 'value="'.$_SESSION['data']['compravanteRg'].'"' : ''; ?>>
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-rg"></p>
