@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documento.php" beforeDir="false" afterPath="$PROJECT_DIR$/documento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/formulario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/consultaAjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/consultaAjax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ws_formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_formulario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ws_geraSEI.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_geraSEI.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/regra-formulario.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/regra-formulario.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,7 @@
       <workItem from="1585844479940" duration="7204000" />
       <workItem from="1585861528010" duration="184000" />
       <workItem from="1585861941447" duration="207000" />
-      <workItem from="1585917386155" duration="264000" />
+      <workItem from="1585917386155" duration="927000" />
     </task>
     <servers />
   </component>
