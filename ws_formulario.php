@@ -4,29 +4,19 @@ session_start();
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
     $tituloNet = isset($_POST['tituloNet']) ? $_POST['tituloNet'] : '';
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
-    $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
     $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
+    $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
     $whatsapp = isset($_POST['whatsapp']) ? 'sim' : 'no';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
-    $partido = isset($_POST['partido']) ? $_POST['partido'] : '';
-    $desfiliacao = isset($_POST['desfiliacao']) ? $_POST['desfiliacao'] : '';
-    $localVotacao = isset($_POST['localVotacao']) ? $_POST['localVotacao'] : '';
     $necessidadeEspecial = isset($_POST['necessidadeEspecial']) ? 'sim' : 'no';
     $comprovanteRg = isset($_FILES['comprovanteRg']) ? $_FILES['comprovanteRg'] : '';
     $comprovanteCpf = isset($_FILES['comprovanteCpf']) ? $_FILES['comprovanteCpf'] : '';
     $comprovanteTitulo = isset($_FILES['comprovanteTitulo']) ? $_FILES['comprovanteTitulo'] : '';
-    $comprovanteSelfie = isset($_FILES['comprovanteSelfie']) ? $_FILES['comprovanteSelfie'] : '';
-    $comprovanteDesfiliacao = isset($_FILES['comprovanteDesfiliacao']) ? $_FILES['comprovanteDesfiliacao'] : '';
     $comprovanteEndereco = isset($_FILES['comprovanteEndereco']) ? $_FILES['comprovanteEndereco'] : '';
-    $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : '';
-    $numero = isset($_POST['numero']) ? $_POST['numero'] : '';
-    $bairro = isset($_POST['bairro']) ? $_POST['bairro'] : '';
-    $cep = isset($_POST['cep']) ? $_POST['cep'] : '';
+    $comprovanteSelfie = isset($_FILES['comprovanteSelfie']) ? $_FILES['comprovanteSelfie'] : '';
 
     function getAmbiente(){
         $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
-        $municipio = isset($_POST['municipio']) ? $_POST['municipio'] : '';
         require_once "database/oracle.php";
 
         $con = DBOracle::Conecta('ADM');
@@ -59,15 +49,6 @@ session_start();
             oci_fetch_all($stmt, $descricaoMunicipio, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
         }
 
-//        $con = DBOracle::Conecta('ADM');
-//        $sql = "SELECT * from ADMCADTO.MUNICIPIO WHERE COD_OBJETO = '".$municipio."'";
-//        $stmt = OCIParse($con, $sql);
-//        $descricaoMunicipioOrigem = array();
-//
-//        if(oci_execute($stmt)) {
-//            oci_fetch_all($stmt, $descricaoMunicipioOrigem, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
-//        }
-
         $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
 
         if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br') {
@@ -77,7 +58,6 @@ session_start();
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
-//                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
@@ -90,7 +70,6 @@ session_start();
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
-//                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei-hom.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
@@ -103,7 +82,6 @@ session_start();
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
-//                "municipioOrigem"=>mb_convert_encoding($descricaoMunicipioOrigem[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );

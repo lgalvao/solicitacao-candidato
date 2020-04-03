@@ -29,15 +29,6 @@ function validar() {
         document.getElementById('erro-nome').innerHTML = '';
     }
 
-    // if (formulario.municipio.value === '') {
-    //     falseLoader();
-    //     document.getElementById('erro-municipio').innerHTML = 'Campo obrigatório';
-    //     formulario.municipio.focus();
-    //     return false
-    // } else {
-    //     document.getElementById('erro-municipio').innerHTML = '';
-    // }
-
     if (formulario.municipioDestino.value === '') {
         falseLoader();
         document.getElementById('erro-municipio-destino').innerHTML = 'Campo obrigatório';
@@ -45,13 +36,6 @@ function validar() {
         return false
     } else {
         document.getElementById('erro-municipio-destino').innerHTML = '';
-    }
-
-    if (formulario.municipio.value === formulario.municipioDestino.value) {
-        falseLoader();
-        alert('Campo Município da Inscrição Eleitoral não pode ser igual ao Município destino');
-        formulario.municipioDestino.focus();
-        return false
     }
 
     if (formulario.telefone.value === '') {

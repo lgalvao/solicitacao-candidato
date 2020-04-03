@@ -194,7 +194,7 @@ if (isset($comprovante_endereco_name)) {
 
 	array_push($documentos, $DocumentoRecebido);
 }
-    $ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, $numIdUnidade, $Procedimento, $documentos, array(), $UnidadesEnvio);
+    $ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, getAmbiente()["numIdUnidade"], $Procedimento, $documentos, array(), $UnidadesEnvio);
 
 
 if ($email != '') {
