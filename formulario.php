@@ -38,9 +38,9 @@ var_dump($_SESSION['data']);
                             <h5 class="card-title">Dados Cadastrais</h5>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-titulo-net">Protocolo Título Net</label>
-                                <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net" <?php isset($_SESSION['data']['titulo']) ? "value=".$_SESSION['data']['titulo'] : ""; ?>>
+                                <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net" <?php echo isset($_SESSION['data']['titulo']) ? "value=".$_SESSION['data']['titulo'] : ""; ?>>
                                 <p class="error" id="erro-titulo-net">
-                                    <?php isset($_SESSION['error']['campo']) == "tituloNet" ? "Campo obrigatório" : ""; ?>
+                                    <?php echo isset($_SESSION['error']['campo']) == "tituloNet" ? "Campo obrigatório" : ""; ?>
                                 </p>
                             </div>
                             <div class="form-group">
