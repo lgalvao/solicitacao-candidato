@@ -226,6 +226,7 @@ if ($email != '') {
     curl_close($ch);
 }
 
+session_destroy();
 header("Location:resposta.php?link=".$ret->LinkAcesso."&numero=".$ret->ProcedimentoFormatado);
 
 ?>
