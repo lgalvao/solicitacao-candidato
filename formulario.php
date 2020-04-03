@@ -47,7 +47,7 @@ var_dump($_SESSION['data']);
                                 <p class="error" id="erro-titulo-net">
                                     <?php
                                         if (isset($_SESSION['error']['campo']) && $_SESSION['error']['campo'] == "tituloNet") {
-                                            "Campo obrigatório";
+                                            echo "Campo obrigatório";
                                         }
                                     ?>
                                 </p>
