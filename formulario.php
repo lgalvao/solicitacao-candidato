@@ -77,7 +77,7 @@ var_dump($_SESSION['data']);
                                 <input class=" form-control form-control-sm" type="text" name="telefone" id="input-telefone"
                                     <?php echo isset($_SESSION['data']['telefone']) ? 'value="'.$_SESSION['data']['telefone'].'"' : ''; ?>>
                                 <p class="error" id="erro-telefone">
-                                    <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['telefone'] == "nome" ? "Campo obrigatório" : ""; ?>
+                                    <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['telefone'] == "telefone" ? "Campo obrigatório" : ""; ?>
                                 </p>
                                 <div class="form-check">
                                     <input class="form-check-input" name="whatsapp" type="checkbox" id="check-whatszapp" value="true"
@@ -196,7 +196,6 @@ var_dump($_SESSION['data']);
     ?>
 
     function buscarMunicipio(cod) {
-        console.log(cod);
         var selectMunicipioDestino = document.getElementById('select-municipio-destino');
         $.ajax({
             url: "/solicitacao-candidato/database/municipio.php",
