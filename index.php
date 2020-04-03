@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION['error'] = [];
+$_SESSION['data'] = [];
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
