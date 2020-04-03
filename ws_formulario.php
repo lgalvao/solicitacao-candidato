@@ -31,50 +31,59 @@ session_start();
         'comprovanteSelfie' => $comprovanteSelfie,
     ];
 
-    if ($titulo === '') {
-        $erro = 'Preencha o campo Título';
+    if ($tituloNet === '') {
+        $erro = 'Preencha o campo Título Net';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
     }
 
-    if ($tituloNet === '') {
-        $erro = 'Preencha o campo Título Net';
+    if ($titulo === '') {
+        $erro = 'Preencha o campo Título Eleitoral';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
 
     if ($nome === '') {
         $erro = 'Preencha o campo Nome';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
 
     if ($municipioDestino === '') {
         $erro = 'Escolha um Município de destino';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
     if ($telefone === '') {
         $erro = 'Preencha o campo Telefone';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
     if ($comprovanteRg === '') {
         $erro = 'Preencha o campo Comprovante de Rg';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
     if ($comprovanteCpf === '') {
         $erro = 'Preencha o campo Comprovante de CPF';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
     if ($comprovanteTitulo === '') {
         $erro = 'Preencha o campo Comprovante de Título';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
 
     if ($comprovanteEndereco === '') {
         $erro = 'Preencha o campo Comprovante de Endereço';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
     if ($comprovanteSelfie === '') {
         $erro = 'Preencha o campo Comprovante de Selfie';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
+        die();
     }
 
     function getAmbiente(){
