@@ -46,7 +46,7 @@ var_dump($_SESSION['data']);
                                 <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net" <?php echo isset($_SESSION['data']['tituloNet']) ? 'value="'.$_SESSION['data']['tituloNet'].'"' : ''; ?>>
                                 <p class="error" id="erro-titulo-net">
                                     <?php
-                                        if (isset($_SESSION['error']['campo']) && $_SESSION['error']['campo'] == "tituloNet") {
+                                        if (isset($_SESSION['error']) && $_SESSION['error']['campo'] == "tituloNet") {
                                             echo "Campo obrigatório";
                                         }
                                     ?>
