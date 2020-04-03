@@ -33,6 +33,7 @@ session_start();
 
     if ($tituloNet === '') {
         $erro = 'Preencha o campo Título Net';
+        $_SESSION['data'] = $data;
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
     }
@@ -70,7 +71,7 @@ session_start();
         die();
     }
     if ($comprovanteTitulo['size'] == 0) {
-        $erro = 'Preencha o campo Comprovante de Título';
+        $erro = 'Preencha o campo Comprovante de Título de eleitor';
         header("Location:formulario.php?data=".$data."&erro=".$erro);
         die();
     }

@@ -10,7 +10,7 @@ $path_servico = "ws_formulario.php";
 $chave_acao = "cadastro_regular";
 
 var_dump($_GET['erro']);
-var_dump($_GET['data']);
+var_dump($_SESSION['data']);
 ?>
 
 <!DOCTYPE html>
