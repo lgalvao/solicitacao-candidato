@@ -10,6 +10,7 @@ $path_servico = "ws_formulario.php";
 $chave_acao = "cadastro_regular";
 
 if (isset($_GET['aceito'])) {
+    echo $_GET['aceito'];
     $_SESSION['error'] = [];
     $_SESSION['data'] = [];
 }
