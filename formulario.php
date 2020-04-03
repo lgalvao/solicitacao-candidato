@@ -67,18 +67,21 @@ var_dump($_SESSION['data']);
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="select-municipio-destino">Município destino</label>
-                                <select id="select-municipio-destino" class=" form-control form-control-sm" name="municipioDestino"
-                                    <?php echo isset($_SESSION['data']['municipioDestino']) ?  : 'onload="buscarMunicipio('.$_SESSION['data']['municipioDestino'].')"'; ?>>
+                                <select id="select-municipio-destino" class=" form-control form-control-sm" name="municipioDestino">
                                     <option value="" selected>Escolha...</option>
                                 </select>
                                 <p class="error" id="erro-municipio-destino"></p>
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-telefone">Telefone</label>
-                                <input class=" form-control form-control-sm" type="text" name="telefone" id="input-telefone">
-                                <p class="error" id="erro-telefone"></p>
+                                <input class=" form-control form-control-sm" type="text" name="telefone" id="input-telefone"
+                                    <?php echo isset($_SESSION['data']['telefone']) ? 'value="'.$_SESSION['data']['telefone'].'"' : ''; ?>>
+                                <p class="error" id="erro-telefone">
+                                    <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['telefone'] == "nome" ? "Campo obrigatório" : ""; ?>
+                                </p>
                                 <div class="form-check">
-                                    <input class="form-check-input" name="whatsapp" type="checkbox" id="check-whatszapp" value="true">
+                                    <input class="form-check-input" name="whatsapp" type="checkbox" id="check-whatszapp" value="true"
+                                        <?php echo isset($_SESSION['data']['whatsapp']) ? 'checked' : ''; ?>>
                                     <label class="form-check-label" for="check-whatszapp">
                                         O telefone é WhatsApp?
                                     </label>
@@ -86,12 +89,14 @@ var_dump($_SESSION['data']);
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-email">E-mail</label>
-                                <input class=" form-control form-control-sm" type="email" name="email" id="input-email">
+                                <input class=" form-control form-control-sm" type="email" name="email" id="input-email"
+                                    <?php echo isset($_SESSION['data']['email']) ? 'value="'.$_SESSION['data']['email'].'"' : ''; ?>>
                                 <p class="error" id="erro-email"></p>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="necessidadeEspecial" type="checkbox" value="true" id="check-necessidade-especial">
+                                    <input class="form-check-input" name="necessidadeEspecial" type="checkbox" value="true" id="check-necessidade-especial"
+                                        <?php echo isset($_SESSION['data']['necessidadeEspecial']) ? 'checked' : ''; ?>>
                                     <label class="form-check-label font-weight-bold" for="check-necessidade-especial">
                                         Necessita Atendimento Especial
                                     </label>
