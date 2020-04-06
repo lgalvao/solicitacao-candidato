@@ -5,5 +5,5 @@ $conteudoRequerimento .= "<p>".$nome.", portador do título eleitoral nº ".$titul
 $conteudoRequerimento .= "<p>Para tanto, junto os documentos necessários para comprovar o alegado.</p>";
 $conteudoRequerimento .= "<p>Outrossim, informa que se trata de demanda urgente, em razão do prazo de domicílio para registro de candidatura.</p>";
 $conteudoRequerimento .= "<p>Pede e espera deferimento.</p>";
-$conteudoRequerimento .= "<p>".getAmbiente()["zonaDescricao"].", ".date("d/m/Y h:i:s").".</p>";
+$conteudoRequerimento .= "<p>".getAmbiente()["zonaDescricao"].", ".date("d/m/Y H:i:s").".</p>";
 ?>e
