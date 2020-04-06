@@ -58,7 +58,7 @@ $DocumentoGerado2['Destinatarios'] = $arrDestinatarios;
 $DocumentoGerado2['Observacao'] = 'observação teste';
 
 $DocumentoGerado2['NomeArquivo'] = null;
-$DocumentoGerado2['Conteudo'] = base64_encode(utf8_encode($conteudoRequerimento));
+$DocumentoGerado2['Conteudo'] = base64_encode($conteudoRequerimento);
 $DocumentoGerado2['NivelAcesso'] = null;
 
 array_push($documentos, $DocumentoGerado2);
