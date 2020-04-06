@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ws_geraSEI.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_geraSEI.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requerimento.php" beforeDir="false" afterPath="$PROJECT_DIR$/requerimento.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,9 @@
       <workItem from="1585861528010" duration="184000" />
       <workItem from="1585861941447" duration="207000" />
       <workItem from="1585917386155" duration="16082000" />
-      <workItem from="1585940315813" duration="1151000" />
+      <workItem from="1585940315813" duration="2115000" />
+      <workItem from="1586175770659" duration="18000" />
+      <workItem from="1586181389082" duration="972000" />
     </task>
     <servers />
   </component>
@@ -89,10 +91,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Deployment/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585834424775" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585938433938">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586175785918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585938433938" />
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586175785918" />
     <state x="463" y="165" key="SettingsEditor" timestamp="1585832159588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -101,10 +103,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585924988820" />
-    <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585917387783">
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1586175770489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="347" key="com.intellij.ide.util.TipDialog/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585917387783" />
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586175770489" />
     <state x="1920" y="0" width="1456" height="737" key="dock-window-1" timestamp="1585925412966">
       <screen x="1920" y="0" width="1440" height="860" />
     </state>
