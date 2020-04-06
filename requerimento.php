@@ -1,9 +1,9 @@
 <?php
 $conteudoRequerimento = "";
 
-$conteudoRequerimento .= "<p>".$nome.", portador do título eleitoral nº ".$titulo.", devidamente qualificado no formulário de pré-atendimento ".$tituloNet.", solicito o processamento do pedido.</p>";
-$conteudoRequerimento .= "<p>Para tanto, junto os documentos necessários para comprovar o alegado.</p>";
-$conteudoRequerimento .= "<p>Outrossim, informa que se trata de demanda urgente, em razão do prazo de domicílio para registro de candidatura.</p>";
+$conteudoRequerimento .= "<p>".$nome.", portador do tÃ­tulo eleitoral nÂº ".$titulo.", devidamente qualificado no formulÃ¡rio de prÃ©-atendimento ".$tituloNet.", solicito o processamento do pedido.</p>";
+$conteudoRequerimento .= "<p>Para tanto, junto os documentos necessÃ¡rios para comprovar o alegado.</p>";
+$conteudoRequerimento .= "<p>Outrossim, informa que se trata de demanda urgente.</p>";
 $conteudoRequerimento .= "<p>Pede e espera deferimento.</p>";
 $conteudoRequerimento .= "<p>".getAmbiente()["zonaDescricao"].", ".date("d/m/Y H:i:s").".</p>";
 ?>e
