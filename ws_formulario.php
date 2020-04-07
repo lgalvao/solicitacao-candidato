@@ -1,4 +1,7 @@
 <?php
+require 'vendor/mustache/mustache/src/Mustache/Autoloader.php';
+Mustache_Autoloader::register();
+
 session_start();
     $acao = 'cadastro_regular';
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
@@ -162,7 +165,7 @@ session_start();
 
         $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
 
-        if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br') {
+        if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br' || $_SERVER['SERVER_NAME'] == 'localhost') {
             return array(
                 "idTipoProcedimento"=>100000899,
                 "idSerie"=>50189,
@@ -170,7 +173,8 @@ session_start();
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
-                "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
+                "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
+                "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei",
             );
         }
 
@@ -182,6 +186,7 @@ session_start();
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei-hom.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
         }
@@ -194,6 +199,7 @@ session_start();
                 "idSerie3"=>295,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
         }

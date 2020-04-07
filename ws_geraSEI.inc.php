@@ -2,6 +2,25 @@
 require_once('documento.php');
 require_once('requerimento.php');
 
+$dados = [
+    'titulo' => $titulo,
+    'tituloNet' => $tituloNet,
+    'nome' => $nome,
+    'telefone' => $telefone,
+    'whatsapp' => $whatsapp,
+    'email' => $email,
+    'necessidadeEspecial' => $necessidadeEspecial,
+    'compravanteRg' => $comprovanteRg,
+    'compravanteCpf' => $comprovanteCpf,
+    'comprovanteTitulo' => $comprovanteTitulo,
+    'comprovanteEndereco' => $comprovanteEndereco,
+    'comprovanteSelfie' => $comprovanteSelfie,
+    'municipioDestino' => getAmbiente()["zonaDescricao"],
+    'zonaEndereco' => getAmbiente()['zonaEndereco'],
+    'dataCriacao' => date("d/m/Y H:i:s"),
+    'logo' => $_SERVER['SERVER_NAME'].'/img/logo-tre.png'
+];
+
 $strWSDL = getAmbiente()["strWSDL"];
 
 if(!@file_get_contents($strWSDL)) {
@@ -38,12 +57,12 @@ $Procedimento['NivelAcesso'] = null;
 
 $documentos = [];
 $DocumentoGerado2 = array();
-$DocumentoGerado2['Tipo'] = 'G';
+$DocumentoGerado2['Tipo'] = 'R';
 $DocumentoGerado2['IdProcedimento'] = null;
 $DocumentoGerado2['IdSerie'] = $IdSerie3;
 
 $DocumentoGerado2['Numero'] = null;
-$DocumentoGerado2['Data'] = null;
+$DocumentoGerado2['Data'] = date("d/m/Y");
 $DocumentoGerado2['Descricao'] = $Descricao;
 $DocumentoGerado2['Remetente'] = null;
 
@@ -57,19 +76,23 @@ $DocumentoGerado2['Destinatarios'] = $arrDestinatarios;
 //Observaçoes para o Documento gerado
 $DocumentoGerado2['Observacao'] = 'observação teste';
 
-$DocumentoGerado2['NomeArquivo'] = null;
+$DocumentoGerado2['NomeArquivo'] = 'requerimento.html';
+
+$mustache = new Mustache_Engine(array('charset' => 'WINDOWS-1252'));
+$conteudoRequerimento = $mustache->render(file_get_contents('_requerimento.html'), $dados);
+
 $DocumentoGerado2['Conteudo'] = base64_encode($conteudoRequerimento);
 $DocumentoGerado2['NivelAcesso'] = null;
 
 array_push($documentos, $DocumentoGerado2);
 
 $DocumentoGerado = array();
-$DocumentoGerado['Tipo'] = 'G';
+$DocumentoGerado['Tipo'] = 'R';
 $DocumentoGerado['IdProcedimento'] = null;
 $DocumentoGerado['IdSerie'] = $IdSerie;
 
 $DocumentoGerado['Numero'] = null;
-$DocumentoGerado['Data'] = null;
+$DocumentoGerado['Data'] = date("d/m/Y");
 $DocumentoGerado['Descricao'] = $Descricao;
 $DocumentoGerado['Remetente'] = null;
 
@@ -84,8 +107,11 @@ $DocumentoGerado['Destinatarios'] = $arrDestinatarios;
 //Observaçoes para o Documento gerado
 $DocumentoGerado['Observacao'] = 'observação teste';
 
-$DocumentoGerado['NomeArquivo'] = null;
-$DocumentoGerado['Conteudo'] = base64_encode(utf8_encode($conteudo));
+$DocumentoGerado['NomeArquivo'] = 'formulario.html';
+
+$mustache = new Mustache_Engine(array('charset' => 'WINDOWS-1252'));
+$conteudoRequerimento = $mustache->render(file_get_contents('_documento.html'), $dados);
+$DocumentoGerado['Conteudo'] = base64_encode($conteudoRequerimento);
 $DocumentoGerado['NivelAcesso'] = null;
 
 array_push($documentos, $DocumentoGerado);

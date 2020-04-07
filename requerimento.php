@@ -6,4 +6,4 @@ $conteudoRequerimento .= "<p>Para tanto, junto os documentos necessários para c
 $conteudoRequerimento .= "<p>Outrossim, informa que se trata de demanda urgente.</p>";
 $conteudoRequerimento .= "<p>Pede e espera deferimento.</p>";
 $conteudoRequerimento .= "<p>".utf8_encode(getAmbiente()["zonaDescricao"]).", ".date("d/m/Y H:i:s").".</p>";
-?>e
+?>
