@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/solicitacao-candidato.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/solicitacao-candidato.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requerimento.php" beforeDir="false" afterPath="$PROJECT_DIR$/requerimento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ws_formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_formulario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ws_geraSEI.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_geraSEI.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +10,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -55,6 +51,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -62,7 +59,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -106,7 +103,9 @@
       <workItem from="1585940315813" duration="2115000" />
       <workItem from="1586175770659" duration="18000" />
       <workItem from="1586181389082" duration="6313000" />
-      <workItem from="1586265772745" duration="16683000" />
+      <workItem from="1586265772745" duration="17944000" />
+      <workItem from="1586350484214" duration="39000" />
+      <workItem from="1586805352496" duration="53000" />
     </task>
     <servers />
   </component>
@@ -118,10 +117,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Deployment/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585834424775" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586175785918">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586350520399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586175785918" />
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586350520399" />
     <state x="463" y="165" key="SettingsEditor" timestamp="1585832159588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -130,10 +129,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585924988820" />
-    <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1586265773325">
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1586350485650">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="347" key="com.intellij.ide.util.TipDialog/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586265773325" />
+    <state x="667" y="347" key="com.intellij.ide.util.TipDialog/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586350485650" />
     <state x="1920" y="0" width="1456" height="737" key="dock-window-1" timestamp="1586291708630">
       <screen x="1920" y="0" width="1440" height="860" />
     </state>

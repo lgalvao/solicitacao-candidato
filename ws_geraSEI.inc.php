@@ -18,7 +18,7 @@ $dados = [
     'municipioDestino' => getAmbiente()["zonaDescricao"],
     'zonaEndereco' => getAmbiente()['zonaEndereco'],
     'dataCriacao' => date("d/m/Y H:i:s"),
-    'logo' => $_SERVER['SERVER_NAME'].'/img/logo-tre.png'
+    'logo' => $_SERVER['SERVER_NAME'].'/solicitacao-candidato/img/logo-tre.png'
 ];
 
 $strWSDL = getAmbiente()["strWSDL"];
