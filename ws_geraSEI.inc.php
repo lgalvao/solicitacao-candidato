@@ -11,7 +11,7 @@ switch ($tipoServico) {
         $tipoServico = 'REVISÃO / RESTABELECIMENTO DE TÍTULO CANCELADO';
         break;
     case 'certidao':
-        $tipoServico = 'RCERTIDÃO DE QUITAÇÃO ELEITORAL';
+        $tipoServico = 'CERTIDÃO DE QUITAÇÃO ELEITORAL';
         break;
     case 'comunicacao':
         $tipoServico = 'COMUNICAÇÃO DE DESFILIAÇÃO (art. 21 da Lei nº 9.096/95)';
