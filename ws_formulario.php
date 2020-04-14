@@ -196,6 +196,7 @@ session_start();
                 "idSerie"=>50189,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
+                "idSerie4"=>541,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
@@ -209,6 +210,7 @@ session_start();
                 "idSerie"=>50108,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
+                "idSerie4"=>541,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
@@ -222,6 +224,7 @@ session_start();
                 "idSerie"=>50105,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
+                "idSerie4"=>541,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
@@ -238,6 +241,7 @@ session_start();
     $IdSerie =  getAmbiente()["idSerie"];
     $IdSerie2 =  getAmbiente()["idSerie2"];
     $IdSerie3 =  getAmbiente()["idSerie3"];
+    $IdSerie4 =  getAmbiente()["idSerie4"];
     $Descricao = 'Formulrio de Regularizao.';
 
     $numIdUnidade =  getAmbiente()["numIdUnidade"];

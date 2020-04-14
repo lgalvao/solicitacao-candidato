@@ -1,6 +1,25 @@
 <?php
-require_once('documento.php');
-require_once('requerimento.php');
+
+switch ($tipoServico) {
+    case 'alistamento':
+        $tipoServico = 'ALISTAMENTO';
+        break;
+    case 'transferencia':
+        $tipoServico = 'TRANSFERÊNCIA';
+        break;
+    case 'revisao':
+        $tipoServico = 'REVISÃO / RESTABELECIMENTO DE TÍTULO CANCELADO';
+        break;
+    case 'certidao':
+        $tipoServico = 'RCERTIDÃO DE QUITAÇÃO ELEITORAL';
+        break;
+    case 'comunicacao':
+        $tipoServico = 'COMUNICAÇÃO DE DESFILIAÇÃO (art. 21 da Lei nº 9.096/95)';
+        break;
+    case 'outros':
+        $tipoServico = 'OUTROS';
+        break;
+}
 
 $dados = [
     'tipoServico' => $tipoServico,
@@ -121,7 +140,7 @@ array_push($documentos, $DocumentoGerado);
 $DocumentoGerado3 = array();
 $DocumentoGerado3['Tipo'] = 'R';
 $DocumentoGerado3['IdProcedimento'] = null;
-$DocumentoGerado3['IdSerie'] = $IdSerie3;
+$DocumentoGerado3['IdSerie'] = $IdSerie4;
 
 $DocumentoGerado3['Numero'] = null;
 $DocumentoGerado3['Data'] = date("d/m/Y");
