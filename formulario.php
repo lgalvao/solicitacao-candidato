@@ -188,6 +188,12 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-endereco"></p>
+                            <div class="form-group mb-0" id="divAlistamento">
+                                <label class="font-weight-bold w-100" for="input-file-alistamento">
+                                    Cópia digitalizada do Alistamento Milita
+                                    <input class=" form-control form-control-sm" type="file" name="comprovanteAlistamento" id="input-file-alistamento" style="height: 37px" placeholder="" accept=".pdf,.jpg,.png">
+                                </label>
+                            </div>
                             <div class="form-group">
                                 <label class="font-weight-bold w-100" for="input-file-selfie">
 
@@ -203,12 +209,6 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-selfie"></p>
-                            <div class="form-group mb-0" id="divAlistamento">
-                                <label class="font-weight-bold w-100" for="input-file-alistamento">
-                                    Cópia digitalizada do Alistamento
-                                    <input class=" form-control form-control-sm" type="file" name="comprovanteAlistamento" id="input-file-alistamento" style="height: 37px" placeholder="" accept=".pdf,.jpg,.png">
-                                </label>
-                            </div>
                             <p class="error" id="erro-comprante-alistamento"></p>
                             <div class="modal fade" id="exampleFoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">

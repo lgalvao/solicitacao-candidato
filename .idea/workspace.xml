@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b412547-e9ce-4702-a27d-796817e9a40a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ws_geraSEI.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/ws_geraSEI.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/formulario.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,7 @@
       <workItem from="1586805352496" duration="391000" />
       <workItem from="1586808801507" duration="606000" />
       <workItem from="1586809810174" duration="647000" />
-      <workItem from="1586867367111" duration="12978000" />
+      <workItem from="1586867367111" duration="13716000" />
     </task>
     <servers />
   </component>
@@ -136,10 +137,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="347" key="com.intellij.ide.util.TipDialog/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586350485650" />
-    <state x="1974" y="0" width="1038" height="732" key="dock-window-1" timestamp="1586884675028">
-      <screen x="1920" y="0" width="1440" height="860" />
+    <state x="552" y="26" width="1038" height="732" key="dock-window-1" timestamp="1586887653874">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1974" y="0" width="1038" height="732" key="dock-window-1/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586884675028" />
+    <state x="552" y="26" width="1038" height="732" key="dock-window-1/1920.0.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1586887653874" />
     <state x="845" y="250" key="ftp.server.browser" timestamp="1585834422078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
