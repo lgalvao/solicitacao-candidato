@@ -193,7 +193,7 @@ session_start();
         if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br' || $_SERVER['SERVER_NAME'] == 'localhost') {
             return array(
                 "idTipoProcedimento"=>100000899,
-                "idSerie"=>50189,
+                "idSerie"=>50018,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "idSerie4"=>541,
@@ -207,7 +207,7 @@ session_start();
         if ($_SERVER['SERVER_NAME'] == 'sei-hom.tre-to.jus.br') {
             return array(
                 "idTipoProcedimento"=>100000749,
-                "idSerie"=>50108,
+                "idSerie"=>50018,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "idSerie4"=>541,
@@ -221,7 +221,7 @@ session_start();
         if ($_SERVER['SERVER_NAME'] == 'sei.tre-to.jus.br') {
             return array(
                 "idTipoProcedimento"=>100000749,
-                "idSerie"=>50105,
+                "idSerie"=>50018,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
                 "idSerie4"=>541,
