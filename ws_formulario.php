@@ -105,7 +105,7 @@ session_start();
         header("Location:formulario.php");
         die();
     }
-    if ($comprovanteTitulo['size'] == 0) {
+    if ($comprovanteTitulo['size'] == 0 && $tipoServico != 'alistamento') {
         $_SESSION['error'] = [
             'messagem' => 'Preencha o campo Comprovante de Título de eleitor',
             'campo' => 'comprovanteTitulo'
