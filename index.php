@@ -16,7 +16,7 @@
 <header class="sb-page-header">
     <div class="container">
         <h1>Alistamento, Transferência e Revisão de Dados Eleitorais</h1>
-        <p>Esta opção destina-se à regularização de urgências do eleitor ou de pretenso candidato nas Eleições Municipais de 2020.</p>
+        <p>Esta opção destina-se ao atendimento de demandas do eleitor/alistando.</p>
     </div>
 </header>
 <div class="row">
