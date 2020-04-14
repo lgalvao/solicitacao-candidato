@@ -143,8 +143,8 @@ $DocumentoGerado3['NomeArquivo'] = 'termos.html';
 $mustache = new Mustache_Engine(array('charset' => 'WINDOWS-1252'));
 $conteudoTermos = $mustache->render(file_get_contents('_termos.html'), $dados);
 
-$DocumentoGerado2['Conteudo'] = base64_encode($conteudoTermos);
-$DocumentoGerado2['NivelAcesso'] = null;
+$DocumentoGerado3['Conteudo'] = base64_encode($conteudoTermos);
+$DocumentoGerado3['NivelAcesso'] = null;
 
 array_push($documentos, $DocumentoGerado3);
 
