@@ -23,7 +23,7 @@ switch ($tipoServico) {
 
 $dados = [
     'tipoServico' => $tipoServico,
-    'titulo' => $titulo,
+    'titulo' => $titulo != '' ? 'Título: '.$titulo : '',
     'tituloNet' => $tituloNet,
     'nome' => $nome,
     'telefone' => $telefone,
