@@ -137,11 +137,10 @@ function habilitarAlistamento() {
     var formulario = document.getElementById('formulario');
     var divTituloEleitoral = document.getElementById('divTituloEleitoral');
 
-    formulario.titulo.value = '';
-
     if (formulario.tipoServico.value === 'alistamento') {
         divAlistamento.style.display = ''
         divTituloEleitoral.style.display = 'none'
+        formulario.titulo.value = '';
     } else {
         divAlistamento.style.display = 'none'
         divTituloEleitoral.style.display = ''
