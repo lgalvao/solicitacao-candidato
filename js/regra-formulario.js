@@ -137,7 +137,7 @@ function habilitarAlistamento() {
     var formulario = document.getElementById('formulario');
     var divTituloEleitoral = document.getElementById('divTituloEleitoral');
 
-    console.log(formulario.tipoServico.value)
+    formulario.titulo.value = '';
 
     if (formulario.tipoServico.value === 'alistamento') {
         divAlistamento.style.display = ''
