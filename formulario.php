@@ -174,7 +174,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-cpf"></p>
-                            <div class="form-group">
+                            <div class="form-group" id="divComprovanteTitulo" style="display: none;">
                                 <label class="font-weight-bold w-100" for="file-titulo">
                                     Cópia digitalizada do Título de Eleitor
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteTitulo" id="file-titulo" style="height: 37px"  accept=".pdf,.jpg,.png">
@@ -194,6 +194,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteAlistamento" id="input-file-alistamento" style="height: 37px" placeholder="" accept=".pdf,.jpg,.png">
                                 </label>
                             </div>
+                            <p class="error" id="erro-comprante-alistamento"></p>
                             <div class="form-group">
                                 <label class="font-weight-bold w-100" for="input-file-selfie">
 
@@ -209,7 +210,6 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-selfie"></p>
-                            <p class="error" id="erro-comprante-alistamento"></p>
                             <div class="modal fade" id="exampleFoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                                     <div class="modal-content">

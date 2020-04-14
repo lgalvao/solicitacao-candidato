@@ -136,13 +136,16 @@ function habilitarAlistamento() {
     var divAlistamento = document.getElementById('divAlistamento');
     var formulario = document.getElementById('formulario');
     var divTituloEleitoral = document.getElementById('divTituloEleitoral');
+    var divComprovanteTitulo = document.getElementById('divComprovanteTitulo');
 
     if (formulario.tipoServico.value === 'alistamento') {
         divAlistamento.style.display = ''
         divTituloEleitoral.style.display = 'none'
+        divComprovanteTitulo.style.display = 'none'
         formulario.titulo.value = '';
     } else {
         divAlistamento.style.display = 'none'
         divTituloEleitoral.style.display = ''
+        divComprovanteTitulo.style.display = ''
     }
 }
