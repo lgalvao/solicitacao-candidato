@@ -10,7 +10,7 @@ function validar() {
         document.getElementById('erro-titulo-net').innerHTML = '';
     }
 
-    if (formulario.titulo.value === '') {
+    if (formulario.titulo.value === '' && formulario.tipoServico.value !== 'alistamento') {
         falseLoader();
         document.getElementById('erro-titulo').innerHTML = 'Campo obrigatório';
         formulario.titulo.focus();
@@ -92,6 +92,24 @@ function validar() {
         document.getElementById('erro-comprante-selfie').innerHTML = '';
     }
 
+    // if (formulario.comprovanteAlistamento.value === '' && formulario.tipoServico.value === 'alistamento') {
+    //     falseLoader();
+    //     document.getElementById('erro-comprante-alistamento').innerHTML = 'Campo obrigatório';
+    //     formulario.comprovanteAlistamento.focus();
+    //     return false
+    // } else {
+    //     document.getElementById('erro-comprante-alistamento').innerHTML = '';
+    // }
+
+    if (formulario.justificativa.value === '') {
+        falseLoader();
+        document.getElementById('erro-justificativa').innerHTML = 'Campo obrigatório';
+        formulario.justificativa.focus();
+        return false
+    } else {
+        document.getElementById('erro-justificativa').innerHTML = '';
+    }
+
     return true
 }
 
@@ -112,4 +130,20 @@ function falseLoader() {
         buttonSubmit.removeAttribute('disabled');
     }, 100);
     buttonSubmit.innerHTML = 'Enviar';
+}
+
+function habilitarAlistamento() {
+    var divAlistamento = document.getElementById('divAlistamento');
+    var formulario = document.getElementById('formulario');
+    var divTituloEleitoral = document.getElementById('divTituloEleitoral');
+
+    console.log(formulario.tipoServico.value)
+
+    if (formulario.tipoServico.value === 'alistamento') {
+        divAlistamento.style.display = ''
+        divTituloEleitoral.style.display = 'none'
+    } else {
+        divAlistamento.style.display = 'none'
+        divTituloEleitoral.style.display = ''
+    }
 }

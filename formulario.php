@@ -53,6 +53,42 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                     <div class="card mt-2">
                         <div class="card-body">
                             <h5 class="card-title">Dados Cadastrais</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoAlistamento" value="alistamento" onclick="habilitarAlistamento()" checked>
+                                <label class="form-check-label" for="servicoAlistamento">
+                                    Alistamento
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoTransferencia" value="transferencia" onclick="habilitarAlistamento()">
+                                <label class="form-check-label" for="servicoTransferencia">
+                                    Transferência
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoRevisao" value="revisao" onclick="habilitarAlistamento()">
+                                <label class="form-check-label" for="servicoRevisao">
+                                    Revisão / Restabelecimento de Título Cancelado
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoCertidao" value="certidao" onclick="habilitarAlistamento()">
+                                <label class="form-check-label" for="servicoCertidao">
+                                    Certidão de Quitação Eleitoral
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoComunicacao" value="comunicacao" onclick="habilitarAlistamento()">
+                                <label class="form-check-label" for="servicoComunicacao">
+                                    Comunicação de Desfiliação (art. 21 da Lei nº 9.096/95)
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoOutros" value="outros" onclick="habilitarAlistamento()">
+                                <label class="form-check-label" for="servicoOutros">
+                                    Outros
+                                </label>
+                            </div>
                             <div class="form-group">
                                 <label class="font-weight-bold" for="input-titulo-net">Protocolo Título Net</label>
                                 <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net"
@@ -61,7 +97,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                     <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['campo'] == "tituloNet" ? "Campo obrigatório" : ""; ?>
                                 </p>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" id="divTituloEleitoral" style="display: none;">
                                 <label class="font-weight-bold" for="input-titulo">Título Eleitoral</label>
                                 <input class=" form-control form-control-sm" type="text" name="titulo" id="input-titulo"
                                     <?php echo isset($_SESSION['data']['titulo']) ? 'value="'.$_SESSION['data']['titulo'].'"' : ''; ?>>
@@ -167,6 +203,13 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-selfie"></p>
+                            <div class="form-group mb-0" id="divAlistamento">
+                                <label class="font-weight-bold w-100" for="input-file-alistamento">
+                                    Cópia digitalizada do Alistamento
+                                    <input class=" form-control form-control-sm" type="file" name="comprovanteAlistamento" id="input-file-alistamento" style="height: 37px" placeholder="" accept=".pdf,.jpg,.png">
+                                </label>
+                            </div>
+                            <p class="error" id="erro-comprante-alistamento"></p>
                             <div class="modal fade" id="exampleFoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
@@ -187,6 +230,13 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </div>
                             </div>
                             <p class="help-block">Formatos aceitos: JPG, PNG e PDF</p>
+                            <div class="form-group">
+                                <label class="font-weight-bold" for="input-justificativa">Justificativa do atendimento</label>
+                                <textarea class="form-control" name="justificativa" id="input-justificativa" rows="4" maxlength="1500"><?php echo isset($_SESSION['data']['justificativa']) ? $_SESSION['data']['justificativa'] : ''; ?></textarea>
+                            </div>
+                            <p class="error" id="erro-justificativa">
+                                <?php echo isset($_SESSION['error']['campo']) && $_SESSION['error']['campo'] == "justificativa" ? "Campo obrigatório" : ""; ?>
+                            </p>
                         </div>
                     </div>
                 </div>
