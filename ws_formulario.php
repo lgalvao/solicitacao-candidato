@@ -1,6 +1,10 @@
 <?php
+require 'vendor/mustache/mustache/src/Mustache/Autoloader.php';
+Mustache_Autoloader::register();
+
 session_start();
     $acao = 'cadastro_regular';
+    $tipoServico = isset($_POST['tipoServico']) ? $_POST['tipoServico'] : '';
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
     $tituloNet = isset($_POST['tituloNet']) ? $_POST['tituloNet'] : '';
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
@@ -14,6 +18,8 @@ session_start();
     $comprovanteTitulo = isset($_FILES['comprovanteTitulo']['size']) > 0 ? $_FILES['comprovanteTitulo'] : '';
     $comprovanteEndereco = isset($_FILES['comprovanteEndereco']['size']) > 0 ? $_FILES['comprovanteEndereco'] : '';
     $comprovanteSelfie = isset($_FILES['comprovanteSelfie']['size']) > 0 ? $_FILES['comprovanteSelfie'] : '';
+    $comprovanteAlistamento = isset($_FILES['comprovanteAlistamento']['size']) > 0 ? $_FILES['comprovanteAlistamento'] : '';
+    $justificativa = isset($_POST['justificativa']) ? $_POST['justificativa'] : '';
 
     $data = [
         'titulo' => $titulo,
@@ -29,6 +35,8 @@ session_start();
         'comprovanteTitulo' => $comprovanteTitulo,
         'comprovanteEndereco' => $comprovanteEndereco,
         'comprovanteSelfie' => $comprovanteSelfie,
+        'comprovanteAlistamento' => $comprovanteAlistamento,
+        'justificativa' => $justificativa
     ];
 
     if ($tituloNet === '') {
@@ -41,7 +49,7 @@ session_start();
         die();
     }
 
-    if ($titulo === '') {
+    if ($titulo === '' && $tipoServico !== 'alistamento') {
         $_SESSION['error'] = [
             'messagem' => 'Preencha o campo Título Eleitoral',
             'campo' => 'titulo'
@@ -97,7 +105,7 @@ session_start();
         header("Location:formulario.php");
         die();
     }
-    if ($comprovanteTitulo['size'] == 0) {
+    if ($comprovanteTitulo['size'] == 0 && $tipoServico != 'alistamento') {
         $_SESSION['error'] = [
             'messagem' => 'Preencha o campo Comprovante de Título de eleitor',
             'campo' => 'comprovanteTitulo'
@@ -116,10 +124,30 @@ session_start();
         header("Location:formulario.php");
         die();
     }
+
     if ($comprovanteSelfie['size'] == 0) {
         $_SESSION['error'] = [
             'messagem' => 'Preencha o campo Comprovante de Selfie',
             'campo' => 'comprovanteSelfie'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
+        die();
+    }
+//    if ($comprovanteAlistamento['size'] == 0 && $tipoServico == 'alistamento') {
+//        $_SESSION['error'] = [
+//            'messagem' => 'Preencha o campo Comprovante de Alistamento',
+//            'campo' => 'comprovanteAlistamento'
+//        ];
+//        $_SESSION['data'] = $data;
+//        header("Location:formulario.php");
+//        die();
+//    }
+
+    if ($justificativa === '') {
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Justificativa',
+            'campo' => 'justificativa'
         ];
         $_SESSION['data'] = $data;
         header("Location:formulario.php");
@@ -162,26 +190,30 @@ session_start();
 
         $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
 
-        if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br') {
+        if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br' || $_SERVER['SERVER_NAME'] == 'localhost') {
             return array(
                 "idTipoProcedimento"=>100000899,
-                "idSerie"=>50189,
+                "idSerie"=>50018,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
+                "idSerie4"=>541,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
-                "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
+                "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
+                "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei",
             );
         }
 
         if ($_SERVER['SERVER_NAME'] == 'sei-hom.tre-to.jus.br') {
             return array(
                 "idTipoProcedimento"=>100000749,
-                "idSerie"=>50108,
+                "idSerie"=>50018,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
+                "idSerie4"=>541,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei-hom.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
         }
@@ -189,11 +221,13 @@ session_start();
         if ($_SERVER['SERVER_NAME'] == 'sei.tre-to.jus.br') {
             return array(
                 "idTipoProcedimento"=>100000749,
-                "idSerie"=>50105,
+                "idSerie"=>50018,
                 "idSerie2"=>293,
                 "idSerie3"=>295,
+                "idSerie4"=>541,
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
         }
@@ -207,6 +241,7 @@ session_start();
     $IdSerie =  getAmbiente()["idSerie"];
     $IdSerie2 =  getAmbiente()["idSerie2"];
     $IdSerie3 =  getAmbiente()["idSerie3"];
+    $IdSerie4 =  getAmbiente()["idSerie4"];
     $Descricao = 'Formulrio de Regularizao.';
 
     $numIdUnidade =  getAmbiente()["numIdUnidade"];
@@ -252,6 +287,14 @@ session_start();
         $dir = 'uploads/'; //Diretrio para uploads
 
         move_uploaded_file($comprovanteEndereco['tmp_name'], $dir.$comprovante_endereco_name); //Fazer upload do arquivo
+    }
+
+    if($comprovanteAlistamento['name'] !== '') {
+        $ext = '.'.strtolower(pathinfo($comprovanteAlistamento['name'], PATHINFO_EXTENSION)); //Pegando extenso do arquivo
+        $comprovante_alistamento_name = "comprovate_alistamento".date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+        $dir = 'uploads/'; //Diretrio para uploads
+
+        move_uploaded_file($comprovanteAlistamento['tmp_name'], $dir.$comprovante_alistamento_name); //Fazer upload do arquivo
     }
 
     if ($acao=='cadastro_regular') {// chave da acao

@@ -1,6 +1,46 @@
 <?php
-require_once('documento.php');
-require_once('requerimento.php');
+
+switch ($tipoServico) {
+    case 'alistamento':
+        $tipoServico = 'ALISTAMENTO';
+        break;
+    case 'transferencia':
+        $tipoServico = 'TRANSFERÊNCIA';
+        break;
+    case 'revisao':
+        $tipoServico = 'REVISÃO / RESTABELECIMENTO DE TÍTULO CANCELADO';
+        break;
+    case 'certidao':
+        $tipoServico = 'CERTIDÃO DE QUITAÇÃO ELEITORAL';
+        break;
+    case 'comunicacao':
+        $tipoServico = 'COMUNICAÇÃO DE DESFILIAÇÃO (art. 21 da Lei nº 9.096/95)';
+        break;
+    case 'outros':
+        $tipoServico = 'OUTROS';
+        break;
+}
+
+$dados = [
+    'tipoServico' => $tipoServico,
+    'titulo' => $titulo != '' ? 'Título: '.$titulo : '',
+    'tituloNet' => $tituloNet,
+    'nome' => $nome,
+    'telefone' => $telefone,
+    'whatsapp' => $whatsapp,
+    'email' => $email,
+    'necessidadeEspecial' => $necessidadeEspecial,
+    'compravanteRg' => $comprovanteRg,
+    'compravanteCpf' => $comprovanteCpf,
+    'comprovanteTitulo' => $comprovanteTitulo,
+    'comprovanteEndereco' => $comprovanteEndereco,
+    'comprovanteSelfie' => $comprovanteSelfie,
+    'municipioDestino' => getAmbiente()["zonaDescricao"],
+    'zonaEndereco' => getAmbiente()['zonaEndereco'],
+    'dataCriacao' => date("d/m/Y H:i:s"),
+    'justificativa' => $justificativa,
+    'logo' => 'https://'.$_SERVER['SERVER_NAME'].'/solicitacao-candidato/img/logo-tre.png'
+];
 
 $strWSDL = getAmbiente()["strWSDL"];
 
@@ -38,12 +78,12 @@ $Procedimento['NivelAcesso'] = null;
 
 $documentos = [];
 $DocumentoGerado2 = array();
-$DocumentoGerado2['Tipo'] = 'G';
+$DocumentoGerado2['Tipo'] = 'R';
 $DocumentoGerado2['IdProcedimento'] = null;
 $DocumentoGerado2['IdSerie'] = $IdSerie3;
 
 $DocumentoGerado2['Numero'] = null;
-$DocumentoGerado2['Data'] = null;
+$DocumentoGerado2['Data'] = date("d/m/Y");
 $DocumentoGerado2['Descricao'] = $Descricao;
 $DocumentoGerado2['Remetente'] = null;
 
@@ -57,19 +97,23 @@ $DocumentoGerado2['Destinatarios'] = $arrDestinatarios;
 //Observaçoes para o Documento gerado
 $DocumentoGerado2['Observacao'] = 'observação teste';
 
-$DocumentoGerado2['NomeArquivo'] = null;
+$DocumentoGerado2['NomeArquivo'] = 'requerimento.html';
+
+$mustache = new Mustache_Engine(array('charset' => 'WINDOWS-1252'));
+$conteudoRequerimento = $mustache->render(file_get_contents('_requerimento.html'), $dados);
+
 $DocumentoGerado2['Conteudo'] = base64_encode($conteudoRequerimento);
 $DocumentoGerado2['NivelAcesso'] = null;
 
 array_push($documentos, $DocumentoGerado2);
 
 $DocumentoGerado = array();
-$DocumentoGerado['Tipo'] = 'G';
+$DocumentoGerado['Tipo'] = 'R';
 $DocumentoGerado['IdProcedimento'] = null;
 $DocumentoGerado['IdSerie'] = $IdSerie;
 
 $DocumentoGerado['Numero'] = null;
-$DocumentoGerado['Data'] = null;
+$DocumentoGerado['Data'] = date("d/m/Y");
 $DocumentoGerado['Descricao'] = $Descricao;
 $DocumentoGerado['Remetente'] = null;
 
@@ -84,11 +128,44 @@ $DocumentoGerado['Destinatarios'] = $arrDestinatarios;
 //Observaçoes para o Documento gerado
 $DocumentoGerado['Observacao'] = 'observação teste';
 
-$DocumentoGerado['NomeArquivo'] = null;
-$DocumentoGerado['Conteudo'] = base64_encode(utf8_encode($conteudo));
+$DocumentoGerado['NomeArquivo'] = 'formulario.html';
+
+$mustache = new Mustache_Engine(array('charset' => 'WINDOWS-1252'));
+$conteudoRequerimento = $mustache->render(file_get_contents('_documento.html'), $dados);
+$DocumentoGerado['Conteudo'] = base64_encode($conteudoRequerimento);
 $DocumentoGerado['NivelAcesso'] = null;
 
 array_push($documentos, $DocumentoGerado);
+
+$DocumentoGerado3 = array();
+$DocumentoGerado3['Tipo'] = 'R';
+$DocumentoGerado3['IdProcedimento'] = null;
+$DocumentoGerado3['IdSerie'] = $IdSerie4;
+
+$DocumentoGerado3['Numero'] = null;
+$DocumentoGerado3['Data'] = date("d/m/Y");
+$DocumentoGerado3['Descricao'] = $Descricao;
+$DocumentoGerado3['Remetente'] = null;
+
+//Mantem o array Interessados ja criado acima
+$DocumentoGerado3['Interessados'] = $arrInteressados;
+
+//Usado somente em alguns tipos, mas necessário para o webservice
+$arrDestinatarios = array();
+$DocumentoGerado3['Destinatarios'] = $arrDestinatarios;
+
+//Observaçoes para o Documento gerado
+$DocumentoGerado3['Observacao'] = 'observação teste';
+
+$DocumentoGerado3['NomeArquivo'] = 'termos.html';
+
+$mustache = new Mustache_Engine(array('charset' => 'WINDOWS-1252'));
+$conteudoTermos = $mustache->render(file_get_contents('_termos.html'), $dados);
+
+$DocumentoGerado3['Conteudo'] = base64_encode($conteudoTermos);
+$DocumentoGerado3['NivelAcesso'] = null;
+
+array_push($documentos, $DocumentoGerado3);
 
 if (isset($comprovante_rg_name)) {
 	//Documento Recebido
@@ -187,13 +264,35 @@ if (isset($comprovante_endereco_name)) {
 
 	$DocumentoRecebido['Interessados'] = $arrInteressados;
 	$DocumentoRecebido['Destinatarios'] = null;
-	$DocumentoRecebido['Observacao'] = 'compravente cpf';
+	$DocumentoRecebido['Observacao'] = 'compravente endereco';
 	$DocumentoRecebido['NomeArquivo'] = $comprovante_endereco_name;
 	$DocumentoRecebido['Conteudo'] = base64_encode(file_get_contents(dirname(__FILE__) . '/uploads/' . $comprovante_endereco_name));
 	$documento['NivelAcesso'] = null;
 
 	array_push($documentos, $DocumentoRecebido);
 }
+
+if (isset($comprovante_alistamento_name)) {
+    //Documento Recebido
+    $DocumentoRecebido = array();
+    $DocumentoRecebido['Tipo'] = 'R';
+    $DocumentoRecebido['IdProcedimento'] = null;
+    $DocumentoRecebido['IdSerie'] = $IdSerie2;
+    $DocumentoRecebido['Numero'] = '1000';
+    $DocumentoRecebido['Data'] = date("d/m/Y");
+    $DocumentoRecebido['Descricao'] = 'Comprovante Alistamento';
+    $DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
+
+    $DocumentoRecebido['Interessados'] = $arrInteressados;
+    $DocumentoRecebido['Destinatarios'] = null;
+    $DocumentoRecebido['Observacao'] = 'compravente Alistamento';
+    $DocumentoRecebido['NomeArquivo'] = $comprovante_alistamento_name;
+    $DocumentoRecebido['Conteudo'] = base64_encode(file_get_contents(dirname(__FILE__) . '/uploads/' . $comprovante_alistamento_name));
+    $documento['NivelAcesso'] = null;
+
+    array_push($documentos, $DocumentoRecebido);
+}
+
     $ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, getAmbiente()["numIdUnidade"], $Procedimento, $documentos, array(), $UnidadesEnvio);
 
 
