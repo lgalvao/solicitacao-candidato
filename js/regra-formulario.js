@@ -65,7 +65,7 @@ function validar() {
         document.getElementById('erro-comprante-cpf').innerHTML = '';
     }
 
-    if (formulario.comprovanteTitulo.value === '') {
+    if (formulario.comprovanteTitulo.value === '' && formulario.tipoServico.value !== 'alistamento') {
         falseLoader();
         document.getElementById('erro-comprante-titulo').innerHTML = 'Campo obrigatório';
         formulario.comprovanteTitulo.focus();
