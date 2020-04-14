@@ -188,7 +188,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-endereco"></p>
-                            <div class="form-group mb-0" id="divAlistamento">
+                            <div class="form-group" id="divAlistamento">
                                 <label class="font-weight-bold w-100" for="input-file-alistamento">
                                     Cópia digitalizada do Alistamento Milita
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteAlistamento" id="input-file-alistamento" style="height: 37px" placeholder="" accept=".pdf,.jpg,.png">
