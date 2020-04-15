@@ -39,14 +39,16 @@ session_start();
         'justificativa' => $justificativa
     ];
 
-    if ($tituloNet === '') {
-        $_SESSION['error'] = [
-            'messagem' => 'Preencha o campo Título Net',
-            'campo' => 'tituloNet'
-        ];
-        $_SESSION['data'] = $data;
-        header("Location:formulario.php");
-        die();
+    if ($tipoServico == 'alistamento' || $tipoServico == 'transferencia' || $tipoServico == 'revisao') {
+        if ($tituloNet === '') {
+            $_SESSION['error'] = [
+                'messagem' => 'Preencha o campo Título Net',
+                'campo' => 'tituloNet'
+            ];
+            $_SESSION['data'] = $data;
+            header("Location:formulario.php");
+            die();
+        }
     }
 
     if ($titulo === '' && $tipoServico !== 'alistamento') {
@@ -82,6 +84,15 @@ session_start();
         $_SESSION['error'] = [
             'messagem' => 'Preencha o campo Telefone',
             'campo' => 'telefone'
+        ];
+        $_SESSION['data'] = $data;
+        header("Location:formulario.php");
+        die();
+    }
+    if ($email === '') {
+        $_SESSION['error'] = [
+            'messagem' => 'Preencha o campo Telefone',
+            'campo' => 'email'
         ];
         $_SESSION['data'] = $data;
         header("Location:formulario.php");
@@ -206,7 +217,7 @@ session_start();
 
         if ($_SERVER['SERVER_NAME'] == 'sei-hom.tre-to.jus.br') {
             return array(
-                "idTipoProcedimento"=>100000749,
+                "idTipoProcedimento"=>100000808,
                 "idSerie"=>50018,
                 "idSerie2"=>293,
                 "idSerie3"=>295,

@@ -77,20 +77,14 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                     Certidão de Quitação Eleitoral
                                 </label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check mb-3">
                                 <input class="form-check-input" type="radio" name="tipoServico" id="servicoComunicacao" value="comunicacao" onclick="habilitarAlistamento()">
                                 <label class="form-check-label" for="servicoComunicacao">
                                     Comunicação de Desfiliação (art. 21 da Lei nº 9.096/95)
                                 </label>
                             </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoOutros" value="outros" onclick="habilitarAlistamento()">
-                                <label class="form-check-label" for="servicoOutros">
-                                    Outros
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="font-weight-bold" for="input-titulo-net">Protocolo Título Net</label>
+                            <div class="form-group" id="divTituloNet">
+                                <label class="font-weight-bold" for="input-titulo-net">Protocolo Título Net <span style="color: red;">*</span></label>
                                 <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net"
                                     <?php echo isset($_SESSION['data']['tituloNet']) ? 'value="'.$_SESSION['data']['tituloNet'].'"' : ''; ?>>
                                 <p class="error" id="erro-titulo-net">
@@ -98,7 +92,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </p>
                             </div>
                             <div class="form-group" id="divTituloEleitoral" style="display: none;">
-                                <label class="font-weight-bold" for="input-titulo">Título Eleitoral</label>
+                                <label class="font-weight-bold" for="input-titulo">Título Eleitoral <span style="color: red;">*</span></label>
                                 <input class=" form-control form-control-sm" type="text" name="titulo" id="input-titulo"
                                     <?php echo isset($_SESSION['data']['titulo']) ? 'value="'.$_SESSION['data']['titulo'].'"' : ''; ?>>
                                 <p class="error" id="erro-titulo">
@@ -106,7 +100,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </p>
                             </div>
                             <div class="form-group">
-                                <label class="font-weight-bold" for="input-nome">Nome</label>
+                                <label class="font-weight-bold" for="input-nome">Nome <span style="color: red;">*</span></label>
                                 <input class=" form-control form-control-sm" type="text" name="nome" id="input-nome"
                                     <?php echo isset($_SESSION['data']['nome']) ? 'value="'.$_SESSION['data']['nome'].'"' : ''; ?>>
                                 <p class="error" id="erro-nome">
@@ -114,7 +108,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </p>
                             </div>
                             <div class="form-group">
-                                <label class="font-weight-bold" for="select-municipio-destino">Município destino</label>
+                                <label class="font-weight-bold" for="select-municipio-destino">Município destino <span style="color: red;">*</span></label>
                                 <select id="select-municipio-destino" class=" form-control form-control-sm" name="municipioDestino">
                                     <option value="" selected>Escolha...</option>
                                 </select>
@@ -123,7 +117,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </p>
                             </div>
                             <div class="form-group">
-                                <label class="font-weight-bold" for="input-telefone">Telefone</label>
+                                <label class="font-weight-bold" for="input-telefone">Telefone <span style="color: red;">*</span></label>
                                 <input class=" form-control form-control-sm" type="text" name="telefone" id="input-telefone"
                                     <?php echo isset($_SESSION['data']['telefone']) ? 'value="'.$_SESSION['data']['telefone'].'"' : ''; ?>>
                                 <p class="error" id="erro-telefone">
@@ -138,12 +132,12 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="font-weight-bold" for="input-email">E-mail</label>
+                                <label class="font-weight-bold" for="input-email">E-mail <span style="color: red;">*</span></label>
                                 <input class=" form-control form-control-sm" type="email" name="email" id="input-email"
                                     <?php echo isset($_SESSION['data']['email']) ? 'value="'.$_SESSION['data']['email'].'"' : ''; ?>>
                                 <p class="error" id="erro-email"></p>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" id="divNecessidade">
                                 <div class="form-check">
                                     <input class="form-check-input" name="necessidadeEspecial" type="checkbox" value="true" id="check-necessidade-especial"
                                         <?php echo isset($_SESSION['data']['necessidadeEspecial']) && $_SESSION['data']['necessidadeEspecial'] == 'sim' ? 'checked' : ''; ?>>
@@ -161,7 +155,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                             <h5 class="card-title">Comprovantes</h5>
                             <div class="form-group">
                                 <label class="font-weight-bold w-100" for="file-rg">
-                                    Cópia digitalizada do RG
+                                    Cópia digitalizada do RG <span style="color: red;">*</span>
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteRg" id="file-rg" accept=".pdf,.jpg,.png" style="height: 37px"
                                         <?php echo isset($_SESSION['data']['email']) ? 'value="'.$_SESSION['data']['compravanteRg']['tmp_name'].'"' : ''; ?>>
                                 </label>
@@ -169,21 +163,21 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                             <p class="error" id="erro-comprante-rg"></p>
                             <div class="form-group">
                                 <label class="font-weight-bold w-100" for="file-cpf">
-                                    Cópia digitalizada do CPF
+                                    Cópia digitalizada do CPF <span style="color: red;">*</span>
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteCpf" id="file-cpf"  accept=".pdf,.jpg,.png" style="height: 37px">
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-cpf"></p>
                             <div class="form-group" id="divComprovanteTitulo" style="display: none;">
                                 <label class="font-weight-bold w-100" for="file-titulo">
-                                    Cópia digitalizada do Título de Eleitor
+                                    Cópia digitalizada do Título de Eleitor <span style="color: red;">*</span>
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteTitulo" id="file-titulo" style="height: 37px"  accept=".pdf,.jpg,.png">
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-titulo"></p>
                             <div class="form-group">
                                 <label class="font-weight-bold w-100" for="file-endereco">
-                                    Cópia digitalizada Comprovante de Endereço
+                                    Cópia digitalizada Comprovante de Endereço <span style="color: red;">*</span>
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteEndereco" id="file-endereco" style="height: 37px"  accept=".pdf,.jpg,.png">
                                 </label>
                             </div>
@@ -200,7 +194,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
 
                                     <div class="row">
                                         <div class="col-6">
-                                            Uma foto sua (selfie)
+                                            Uma foto sua (selfie) <span style="color: red;">*</span>
                                         </div>
                                         <div class="col-6 text-right">
                                             <button type="button" class="btn btn-info mb-1" style="padding: 1px 10px; margin-top: -10px" data-toggle="modal" data-target="#exampleFoto">?</button>
@@ -231,7 +225,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                             </div>
                             <p class="help-block">Formatos aceitos: JPG, PNG e PDF</p>
                             <div class="form-group">
-                                <label class="font-weight-bold" for="input-justificativa">Justificativa do atendimento</label>
+                                <label class="font-weight-bold" for="input-justificativa">Justificativa do atendimento <span style="color: red;">*</span></label>
                                 <textarea class="form-control" name="justificativa" id="input-justificativa" rows="4" maxlength="1500"><?php echo isset($_SESSION['data']['justificativa']) ? $_SESSION['data']['justificativa'] : ''; ?></textarea>
                             </div>
                             <p class="error" id="erro-justificativa">
