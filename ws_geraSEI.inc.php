@@ -24,7 +24,7 @@ switch ($tipoServico) {
 $dados = [
     'tipoServico' => $tipoServico,
     'tituloFormulario' => $titulo != '' ? 'Título: '.$titulo : '',
-    'tituloRequerimento' => $titulo != '' ? 'portador do título eleitoral nº: '.$titulo : '',
+    'tituloRequerimento' => $titulo != '' ? ', portador do título eleitoral nº: '.$titulo : '',
     'tituloNet' => $tituloNet != '' ? 'Protocolo de pré-atendimento: '.$tituloNet : '',
     'nome' => $nome,
     'telefone' => $telefone,
