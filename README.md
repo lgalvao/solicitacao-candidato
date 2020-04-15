@@ -1,47 +1,68 @@
-1.Incluir projeto na pastas de opt/clientes no SEI.
+# ImplantaÃ§Ã£o
 
-2.Inclusão de linha no arquivo etc/httpd/conf.d/03_sei.conf - Alias "/solicitacao-candidato" "/opt/clientes/solicitacao-candidato"
+Os passos a seguir refletem o ambiente de implantaÃ§Ã£o no TRE-TO. Em outros TRE's, a localizaÃ§Ã£o de onde hospedar o projeto, poderia ser alterada livremente.
 
-3.Criar Sistema no SEI - Sigla: Regular - Nome: Formulário de Regularização gerar link acesso externo
+## Colocar projeto no servidor com Apache
 
-4.Dentro de sistema criar serviço - Identificação: formRegularizacaoExterno - Descrição: Formulário de Regularização - Servidores: atribuir ip do servidor
+Incluir projeto na pasta `/opt/clientes` no servidor do SEI.
 
-5.Dentro de serviço Incluir operações
-Tipo da Operação: Gerar Procedimento 
-Unidade: todas
-Tipo do Processo: Tecnologia da informação - Sistema Corporativos
+## Configurar alias no Apache
 
-Tipo da Operação: Incluir Documento
-Unidade: todas
-Tipo do Processo: Tecnologia da informação - Sistema Corporativos
-Tipo do Documento: Formulário Comunicação de Desfiliação Partidária
+InclusÃ£o de linha no arquivo etc/httpd/conf.d/03_sei.confi:
+    
+    Alias "/solicitacao-candidato" "/opt/clientes/solicitacao-candidato"
 
-Tipo da Operação: Incluir Documento
-Unidade: todas
-Tipo do Processo: Tecnologia da informação - Sistema Corporativos
-Tipo do Documento: Formulário Transferência de Domicilio Eleitoral
+Em seguida recarregar ou reiniciar o Apache. Em sistemas como CentOS, seria executar o comando:
 
-Tipo da Operação: Incluir Documento
-Unidade: todas
-Tipo do Processo: Tecnologia da informação - Sistema Corporativos
-Tipo do Documento: Anexo
+    systemctl reload httpd.service 
 
-Tipo da Operação: Incluir Documento
-Unidade: todas
-Tipo do Processo: Tecnologia da informação - Sistema Corporativos
-Tipo do Documento: Requerimento
+## Coonfigurar o Web Service no SEI
 
-6.Criar Tipos Documentos
+### Criar sistema no SEI
 
-Grupo: Geral
-Nome: Formulário Transferência de Domicilio Eleitoral
-Aplicabilidade: Documentos internos
-Modelo: Geral sem Unid sem Num
-Tilo de Numeração: sem Numeração
+**Sigla**: Regular  
+**Nome**: FormulÃ¡rio de RegularizaÃ§Ã£o gerar link acesso externo
 
-7.Atribuir as configurações no metodo getAmbiente() no documento ws_formulário
+### Dentro de sistema, criar serviÃ§o
 
-"idTipoProcedimento"=>id(Tecnologia da Informação - Sistemas corporativos),
-"idSerie"=> id(Formulário Transferência de Domicilio Eleitoral),
-"idSerie2"=>id(Requerimento),
-"idSerie3"=>id(Anexo),
+**IdentificaÃ§Ã£o**: formRegularizacaoExterno  
+**DescriÃ§Ã£o**: FormulÃ¡rio de RegularizaÃ§Ã£o  
+**Servidores**: atribuir ip do servidor  
+
+### Dentro de serviÃ§o, incluir operaÃ§Ãµes
+
+**Tipo da OperaÃ§Ã£o**: Gerar Procedimento  
+**Unidade**: todas  
+**Tipo do Processo**: Tecnologia da informaÃ§Ã£o - Sistema Corporativos  
+
+**Tipo da OperaÃ§Ã£o**: Incluir Documento  
+**Unidade**: todas  
+**Tipo do Processo**: Tecnologia da informaÃ§Ã£o - Sistema Corporativos  
+**Tipo do Documento**: FormulÃ¡rio
+
+**Tipo da OperaÃ§Ã£o**: Incluir Documento  
+**Unidade**: todas  
+**Tipo do Processo**: Tecnologia da informaÃ§Ã£o - Sistema Corporativos  
+**Tipo do Documento**: Anexo  
+
+**Tipo da OperaÃ§Ã£o**: Incluir Documento  
+**Unidade**: todas  
+**Tipo do Processo**: Tecnologia da informaÃ§Ã£o - Sistema Corporativos  
+**Tipo do Documento**: Requerimento  
+
+**Tipo da OperaÃ§Ã£o**: Incluir Documento  
+**Unidade**: todas  
+**Tipo do Processo**: Tecnologia da informaÃ§Ã£o - Sistema Corporativos  
+**Tipo do Documento**: Termo  
+
+### Aumentar a quantidade de arquivos que podem ser anexados por Web Services
+
+no SEI: menu Infra -> ParÃ¢metros -> alterar o parÃ¢metro `SEI_WS_NUM_MAX_DOCS` para 9.
+
+## Atribuir as configuraÃ§Ãµes no metodo getAmbiente() no arquivo ws_formulario.php
+
+    "idTipoProcedimento"=>id(Tecnologia da InformaÃ§Ã£o - Sistemas corporativos),  
+    "idSerie"=> id(FormulÃ¡rio TransferÃªncia de Domicilio Eleitoral),  
+    "idSerie2"=>id(Requerimento),  
+    "idSerie3"=>id(Anexo),  
+
