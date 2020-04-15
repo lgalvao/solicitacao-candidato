@@ -119,7 +119,7 @@ function validar() {
         document.getElementById('erro-justificativa').innerHTML = '';
     }
 
-    return false
+    return true
 }
 
 function loader() {
