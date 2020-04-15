@@ -200,7 +200,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                             <button type="button" class="btn btn-info mb-1" style="padding: 1px 10px; margin-top: -10px" data-toggle="modal" data-target="#exampleFoto">?</button>
                                         </div>
                                     </div>
-                                    <input class=" form-control form-control-sm" type="file" name="comprovanteSelfie" id="input-file-selfie" style="height: 37px" placeholder="" accept=".pdf,.jpg,.png">
+                                    <input class=" form-control form-control-sm" type="file" name="comprovanteSelfie" id="input-file-selfie" style="height: 37px" placeholder="" accept=".pdf,.jpg,.png" data-toggle="modal" data-target="#exampleFoto">
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-selfie"></p>
