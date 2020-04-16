@@ -84,7 +84,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </label>
                             </div>
                             <div class="form-group" id="divTituloNet">
-                                <label class="font-weight-bold" for="input-titulo-net">Protocolo Título Net <span style="color: red;">*</span></label>
+                                <label class="font-weight-bold" for="input-titulo-net">Protocolo do Título Net <span style="color: red;">*</span></label>
                                 <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net"
                                     <?php echo isset($_SESSION['data']['tituloNet']) ? 'value="'.$_SESSION['data']['tituloNet'].'"' : ''; ?>>
                                 <p class="error" id="erro-titulo-net">
@@ -108,7 +108,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 </p>
                             </div>
                             <div class="form-group">
-                                <label class="font-weight-bold" for="select-municipio-destino">Município destino <span style="color: red;">*</span></label>
+                                <label class="font-weight-bold" for="select-municipio-destino">Município de destino <span style="color: red;">*</span></label>
                                 <select id="select-municipio-destino" class=" form-control form-control-sm" name="municipioDestino">
                                     <option value="" selected>Escolha...</option>
                                 </select>
