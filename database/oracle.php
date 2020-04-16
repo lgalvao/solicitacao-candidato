@@ -3,7 +3,7 @@
 class DBOracle{
     static $DB_CONF = array (
         'ADM'=> array(
-            'ADM'=> array ('U'=>"admsei",'PW'=>"2IWERIHS2X", 'SID'=>"to1/adm.world"),
+            'ADM'=> array ('U'=>"admweb",'PW'=>"sesaw2009", 'SID'=>"to1/adm.world"),
         )
     );
 
@@ -25,12 +25,12 @@ class DBOracle{
         if (!$conn){
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
-            die ("<h1>Problemas com a conexão ao banco de dados:</h1>
-            Banco:". DBOracle::$DB_CONF[$env][$param_DB]['SID']." - Usuário:". DBOracle::$DB_CONF[$env][$param_DB]['U']. "<BR />
-              <font color=red><b>Nossos servidores de Banco de Dados estão passando por problemas técnicos.
+            die ("<h1>Problemas com a conexï¿½o ao banco de dados:</h1>
+            Banco:". DBOracle::$DB_CONF[$env][$param_DB]['SID']." - Usuï¿½rio:". DBOracle::$DB_CONF[$env][$param_DB]['U']. "<BR />
+              <font color=red><b>Nossos servidores de Banco de Dados estï¿½o passando por problemas tï¿½cnicos.
             <br/>Por favor, aguarde alguns instantes e tente novamente.</b></font><br/>
             <br/>
-            <u>ATENÇÃO</u>: Informamos que o correio eletrônico e o acesso à  Internet podem estar disponíveis.
+            <u>ATENï¿½ï¿½O</u>: Informamos que o correio eletrï¿½nico e o acesso ï¿½ Internet podem estar disponï¿½veis.
             <br/>"
             );
         }
