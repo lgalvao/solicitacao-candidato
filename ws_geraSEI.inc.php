@@ -23,13 +23,15 @@ switch ($tipoServico) {
 
 $dados = [
     'tipoServico' => $tipoServico,
-    'titulo' => $titulo != '' ? 'Título: '.$titulo : '',
-    'tituloNet' => $tituloNet,
+    'tituloFormulario' => $titulo != '' ? 'Título: '.$titulo : '',
+    'tituloRequerimento' => $titulo != '' ? ', portador do título eleitoral nº: '.$titulo : '',
+    'tituloNetRequerimento' => $tituloNet != '' ? $tituloNet : '',
+    'tituloNetFormulario' => $tituloNet != '' ? 'Protocolo de pré-atendimento: '.$tituloNet : '',
     'nome' => $nome,
     'telefone' => $telefone,
     'whatsapp' => $whatsapp,
     'email' => $email,
-    'necessidadeEspecial' => $necessidadeEspecial,
+    'necessidadeEspecial' => $necessidadeEspecial != '' ? 'Necessita Atendimento Especial: '.$necessidadeEspecial : '',
     'compravanteRg' => $comprovanteRg,
     'compravanteCpf' => $comprovanteCpf,
     'comprovanteTitulo' => $comprovanteTitulo,

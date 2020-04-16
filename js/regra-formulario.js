@@ -1,7 +1,7 @@
 function validar() {
     var formulario = document.getElementById('formulario');
 
-    if (formulario.tituloNet.value === '') {
+    if (formulario.tituloNet.value === '' && formulario.tipoServico.value === 'alistamento' || formulario.tituloNet.value === '' && formulario.tipoServico.value === 'transferencia' || formulario.tituloNet.value === '' && formulario.tipoServico.value === 'revisao') {
         falseLoader();
         document.getElementById('erro-titulo-net').innerHTML = 'Campo obrigatório';
         formulario.tituloNet.focus();
@@ -45,6 +45,15 @@ function validar() {
         return false
     } else {
         document.getElementById('erro-telefone').innerHTML = '';
+    }
+
+    if (formulario.email.value === '') {
+        falseLoader();
+        document.getElementById('erro-email').innerHTML = 'Campo obrigatório';
+        formulario.email.focus();
+        return false
+    } else {
+        document.getElementById('erro-email').innerHTML = '';
     }
 
     if (formulario.comprovanteRg.value === '') {
@@ -137,15 +146,27 @@ function habilitarAlistamento() {
     var formulario = document.getElementById('formulario');
     var divTituloEleitoral = document.getElementById('divTituloEleitoral');
     var divComprovanteTitulo = document.getElementById('divComprovanteTitulo');
+    var divNecessidade = document.getElementById('divNecessidade');
+    var divTituloNet = document.getElementById('divTituloNet');
 
     if (formulario.tipoServico.value === 'alistamento') {
-        divAlistamento.style.display = ''
-        divTituloEleitoral.style.display = 'none'
-        divComprovanteTitulo.style.display = 'none'
+        divAlistamento.style.display = '';
+        divTituloEleitoral.style.display = 'none';
+        divComprovanteTitulo.style.display = 'none';
         formulario.titulo.value = '';
     } else {
-        divAlistamento.style.display = 'none'
-        divTituloEleitoral.style.display = ''
-        divComprovanteTitulo.style.display = ''
+        divAlistamento.style.display = 'none';
+        divTituloEleitoral.style.display = '';
+        divComprovanteTitulo.style.display = '';
+    }
+
+    if (formulario.tipoServico.value === 'alistamento' || formulario.tipoServico.value === 'transferencia' || formulario.tipoServico.value === 'revisao') {
+        divNecessidade.style.display = '';
+        divTituloNet.style.display = '';
+    } else {
+        formulario.tituloNet.value = '';
+        formulario.necessidadeEspecial.checked = false;
+        divNecessidade.style.display = 'none';
+        divTituloNet.style.display = 'none';
     }
 }
