@@ -1,6 +1,6 @@
 # Implantação
 
-Os passos a seguir refletem o ambiente de implantação no TRE-TO. Em outros TRE's, a localização de onde hospedar o projeto, poderia ser alterada livremente.
+Os passos a seguir refletem o ambiente de implantação no TRE-PE. Em outros TRE's, a localização de onde hospedar o projeto, poderia ser alterada livremente.
 
 ## Colocar projeto no servidor com Apache
 

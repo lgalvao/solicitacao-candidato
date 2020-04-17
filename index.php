@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TRE-TO :: Regularização</title>
+    <title>TRE-PE :: Regularização</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -10,7 +10,7 @@
 </head>
 <body>
 <header class="container">
-    <img src="img/tre-to.png">
+    <img src="img/tre-pe.png">
 </header>
 <div class="divisor-header"></div>
 <header class="sb-page-header">
@@ -52,11 +52,11 @@
     </div>
 </div>
 <div class="footer-block text-center" style="margin-top: 40px">
-    <h4>Dúvidas, problemas no acesso ou pedidos de alteração de senha, encaminhar por e-mail: <a href="mailto:cre@tre-to.jus.br">cre@tre-to.jus.br</a></h4>
+    <h4>Dúvidas, problemas no acesso ou pedidos de alteração de senha, encaminhar por e-mail: <a href="mailto:cre@tre-pe.jus.br">cre@tre-pe.jus.br</a></h4>
 </div>
 <hr>
 <div class="text-center">
-    Tribunal Regional Eleitoral do Tocantins
+    Tribunal Regional Eleitoral de Pernambuco
 </div>
 </body>
 </html>

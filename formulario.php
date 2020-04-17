@@ -19,7 +19,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TRE-TO</title>
+    <title>TRE-PE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -28,7 +28,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
 <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.php">
-            <img src="img/tre-to.png" width="370" height="80" class="d-inline-block align-top" alt="tre-to">
+            <img src="img/tre-pe.png" width="370" height="80" class="d-inline-block align-top" alt="tre-pe">
         </a>
     </nav>
     <h3 class="text-center mt-3">Regularização Eleitoral</h3>

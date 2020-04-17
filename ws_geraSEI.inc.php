@@ -306,14 +306,14 @@ if ($email != '') {
     $ch   = curl_init();
     $message = '';
     $message .= 'Prezado '.$nome.',<br>';
-    $message .= 'O TRE-TO recebeu a sua solicitação.<br>';
+    $message .= 'O TRE-PE recebeu a sua solicitação.<br>';
     $message .= "O número do processo, para fins de acompanhamento, é <a href='".$ret->LinkAcesso."'>".$ret->ProcedimentoFormatado."</a><br>";
     $message .= 'Após a análise pela zona eleitoral competente, Vossa Senhoria será comunicado(a) sobre o andamento da solicitação.<br>';
-    $message .= 'Tribunal Regional Eleitoral do Tocantins<br>';
+    $message .= 'Tribunal Regional Eleitoral de Pernambuco<br>';
 
     $data = array(
-        'from' => 'no-reply2@tre-to.jus.br',
-        'fromname' => 'TRE - TO',
+        'from' => 'no-reply2@tre-pe.jus.br',
+        'fromname' => 'TRE - PE',
         'to'=> $email,
         'subject'=> utf8_encode('Formulário de Regularização'),
         'message'=> utf8_encode($message),
