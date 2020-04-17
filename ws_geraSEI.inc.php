@@ -306,7 +306,7 @@ if ($email != '') {
     $ch   = curl_init();
     $message = '';
     $message .= 'Prezado '.$nome.',<br>';
-    $message .= 'O TRE-TO recebeu a sua solicitação de Transferência de Domicilio Eleitoral.<br>';
+    $message .= 'O TRE-TO recebeu a sua solicitação.<br>';
     $message .= "O número do processo, para fins de acompanhamento, é <a href='".$ret->LinkAcesso."'>".$ret->ProcedimentoFormatado."</a><br>";
     $message .= 'Após a análise pela zona eleitoral competente, Vossa Senhoria será comunicado(a) sobre o andamento da solicitação.<br>';
     $message .= 'Tribunal Regional Eleitoral do Tocantins<br>';
