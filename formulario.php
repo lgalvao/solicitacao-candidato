@@ -71,18 +71,6 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                     Revisão / Restabelecimento de Título Cancelado
                                 </label>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoCertidao" value="certidao" onclick="habilitarAlistamento()">
-                                <label class="form-check-label" for="servicoCertidao">
-                                    Certidão de Quitação Eleitoral
-                                </label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="radio" name="tipoServico" id="servicoComunicacao" value="comunicacao" onclick="habilitarAlistamento()">
-                                <label class="form-check-label" for="servicoComunicacao">
-                                    Comunicação de Desfiliação (art. 21 da Lei nº 9.096/95)
-                                </label>
-                            </div>
                             <div class="form-group" id="divTituloNet">
                                 <label class="font-weight-bold" for="input-titulo-net">Protocolo do Título Net <span style="color: red;">*</span></label>
                                 <input class=" form-control form-control-sm" type="text" name="tituloNet" id="input-titulo-net"
@@ -194,7 +182,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
 
                                     <div class="row">
                                         <div class="col-6">
-                                            Uma foto sua (selfie) <span style="color: red;">*</span>
+                                        Foto do rosto ao lado de um documento de identificação com foto. <span style="color: red;">*</span>
                                         </div>
                                         <div class="col-6 text-right">
                                             <button type="button" class="btn btn-info mb-1" style="padding: 1px 10px; margin-top: -10px" data-toggle="modal" data-target="#exampleFoto">?</button>
@@ -213,11 +201,6 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="alert alert-primary" role="alert">
-                                                Para garantir que é você mesmo que está solicitando, favor enviar
-                                                uma foto do seu rosto. A foto deve conter também um documento de identificação
-                                                com foto, conforme modelo abaixo:
-                                            </div>
                                             <img src="img/selfie.jpeg" class="img-fluid" alt="selfie exemplo">
                                         </div>
                                     </div>
