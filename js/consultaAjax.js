@@ -1,7 +1,8 @@
-carregarMunicipios();
+//carregarMunicipios();
 
 function carregarMunicipios() {
-    var selectMunicipioDestino = document.getElementById('select-municipio-destino');
+    // TODO COLOCAR OS NOSSOS MUNICÍPIOS
+   /* var selectMunicipioDestino = document.getElementById('select-municipio-destino');
     $.ajax({
         url: "/solicitacao-candidato/database/municipio.php",
         success: function(result) {
@@ -9,5 +10,5 @@ function carregarMunicipios() {
                 selectMunicipioDestino.innerHTML += `<option value="${mun.COD_OBJETO}">${mun.NOM_LOCALIDADE}</option>`;
             });
         }
-    });
+    }); */
 }
