@@ -177,7 +177,7 @@ if (isset($comprovante_rg_name)) {
 	$DocumentoRecebido['Tipo'] = 'R';
 	$DocumentoRecebido['IdProcedimento'] = null;
 	$DocumentoRecebido['IdSerie'] = $IdSerie2;
-	$DocumentoRecebido['Numero'] = '1000';
+	$DocumentoRecebido['Numero'] = '';
 	$DocumentoRecebido['Data'] = date("d/m/Y");;
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
 	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
@@ -198,7 +198,7 @@ if (isset($comprovante_cpf_name)) {
 	$DocumentoRecebido['Tipo'] = 'R';
 	$DocumentoRecebido['IdProcedimento'] = null;
 	$DocumentoRecebido['IdSerie'] = $IdSerie2;
-	$DocumentoRecebido['Numero'] = '1000';
+	$DocumentoRecebido['Numero'] = '';
 	$DocumentoRecebido['Data'] = date("d/m/Y");;
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
 	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
@@ -219,7 +219,7 @@ if (isset($comprovante_titulo_name)) {
 	$DocumentoRecebido['Tipo'] = 'R';
 	$DocumentoRecebido['IdProcedimento'] = null;
 	$DocumentoRecebido['IdSerie'] = $IdSerie2;
-	$DocumentoRecebido['Numero'] = '1000';
+	$DocumentoRecebido['Numero'] = '';
 	$DocumentoRecebido['Data'] = date("d/m/Y");;
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
 	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
@@ -240,7 +240,7 @@ if (isset($comprovante_selfie_name)) {
 	$DocumentoRecebido['Tipo'] = 'R';
 	$DocumentoRecebido['IdProcedimento'] = null;
 	$DocumentoRecebido['IdSerie'] = $IdSerie2;
-	$DocumentoRecebido['Numero'] = '1000';
+	$DocumentoRecebido['Numero'] = '';
 	$DocumentoRecebido['Data'] = date("d/m/Y");;
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
 	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
@@ -261,7 +261,7 @@ if (isset($comprovante_endereco_name)) {
 	$DocumentoRecebido['Tipo'] = 'R';
 	$DocumentoRecebido['IdProcedimento'] = null;
 	$DocumentoRecebido['IdSerie'] = $IdSerie2;
-	$DocumentoRecebido['Numero'] = '1000';
+	$DocumentoRecebido['Numero'] = '';
 	$DocumentoRecebido['Data'] = date("d/m/Y");
 	$DocumentoRecebido['Descricao'] = 'Comprovante RG';
 	$DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
@@ -282,7 +282,7 @@ if (isset($comprovante_alistamento_name)) {
     $DocumentoRecebido['Tipo'] = 'R';
     $DocumentoRecebido['IdProcedimento'] = null;
     $DocumentoRecebido['IdSerie'] = $IdSerie2;
-    $DocumentoRecebido['Numero'] = '1000';
+    $DocumentoRecebido['Numero'] = '';
     $DocumentoRecebido['Data'] = date("d/m/Y");
     $DocumentoRecebido['Descricao'] = 'Comprovante Alistamento';
     $DocumentoRecebido['Remetente'] = array('Sigla'=>'lmr','Nome'=>'Luiza');
