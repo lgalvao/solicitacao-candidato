@@ -182,7 +182,7 @@ session_start();
         }
 
         $con = DBOracle::Conecta('ADM');
-        $sql = "SELECT CD AS ID_UNIDADE, DS AS DESCRICAO FROM SRH2.UNIDADE_TSE WHERE SIGLA_UNID_TSE LIKE concat(".$numeroZona[0]['NUM_ZONA'].",'%') ORDER BY SIGLA_UNID_TSE ASC";
+        $sql = "SELECT CD AS ID_UNIDADE, DS AS DESCRICAO FROM SRH2.UNIDADE_TSE WHERE SIGLA_UNID_TSE LIKE concat(".$numeroZona[0]['NUM_ZONA'].",'%') AND NUM_ZE IS NOT NULL ORDER BY SIGLA_UNID_TSE ASC";
         $stmt = OCIParse($con, $sql);
         $idIunidade = array();
 
