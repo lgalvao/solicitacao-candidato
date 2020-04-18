@@ -65,15 +65,6 @@ function validar() {
         document.getElementById('erro-comprante-rg').innerHTML = '';
     }
 
-    if (formulario.comprovanteCpf.value === '') {
-        falseLoader();
-        document.getElementById('erro-comprante-cpf').innerHTML = 'Campo obrigatório';
-        formulario.comprovanteCpf.focus();
-        return false
-    } else {
-        document.getElementById('erro-comprante-cpf').innerHTML = '';
-    }
-
     if (formulario.comprovanteTitulo.value === '' && formulario.tipoServico.value !== 'alistamento') {
         falseLoader();
         document.getElementById('erro-comprante-titulo').innerHTML = 'Campo obrigatório';

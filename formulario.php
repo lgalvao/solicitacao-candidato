@@ -151,7 +151,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                             <p class="error" id="erro-comprante-rg"></p>
                             <div class="form-group">
                                 <label class="font-weight-bold w-100" for="file-cpf">
-                                    Cópia digitalizada do CPF <span style="color: red;">*</span>
+                                    Cópia digitalizada do CPF
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteCpf" id="file-cpf"  accept=".pdf,.jpg,.png" style="height: 37px">
                                 </label>
                             </div>
