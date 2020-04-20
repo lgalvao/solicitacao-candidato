@@ -45,7 +45,7 @@ $strWSDL = getAmbiente()["strWSDL"];
     die();
 }*/
 try{
-	$objWS = new SoapClient("/solicitacao-eleitor/ws_sei.wsdl", array('encoding'=>'WINDOWS-1252'));
+	$objWS = new SoapClient("ws_sei.wsdl", array('encoding'=>'WINDOWS-1252'));
 }catch(Exception $e){
 	 echo 'Erro acessando serviço.'.$e;
 	 die();
