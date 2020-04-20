@@ -35,7 +35,7 @@ $dados = [
     'zonaEndereco' => getAmbiente()['zonaEndereco'],
     'dataCriacao' => date("d/m/Y H:i:s"),
     'justificativa' => $justificativa,
-    'logo' => 'https://'.$_SERVER['SERVER_NAME'].'/solicitacao-candidato/img/logo-tre.png'
+    'logo' => 'https://'.$_SERVER['SERVER_NAME'].'/solicitacao-eleitor/img/logo-tre.png'
 ];
 
 $strWSDL = getAmbiente()["strWSDL"];
@@ -295,7 +295,7 @@ if (isset($comprovante_alistamento_name)) {
 
 
 if ($email != '') {
-    $url  = 'http://dudol.tre-to.gov.br:8080/dudol/email/enviar';
+    $url  = 'http://dudol:8080/dudol/email/enviar';
     $data = ['key' => 'value'];
     $ch   = curl_init();
     $message = '';
@@ -306,8 +306,8 @@ if ($email != '') {
     $message .= 'Tribunal Regional Eleitoral de Pernambuco<br>';
 
     $data = array(
-        'from' => 'no-reply2@tre-pe.jus.br',
-        'fromname' => 'TRE - PE',
+        'from' => 'naoresponda@tre-pe.jus.br',
+        'fromname' => 'TRE-PE',
         'to'=> $email,
         'subject'=> utf8_encode('Formulário de Regularização'),
         'message'=> utf8_encode($message),
