@@ -40,10 +40,10 @@ $dados = [
 
 $strWSDL = getAmbiente()["strWSDL"];
 
-if(!@file_get_contents($strWSDL)) {
+/*if(!@file_get_contents($strWSDL)) {
     echo 'Arquivo WSDL '.$strWSDL.' não encontrado.';
     die();
-}
+}*/
 try{
 	$objWS = new SoapClient($strWSDL, array('encoding'=>'WINDOWS-1252'));
 }catch(Exception $e){
