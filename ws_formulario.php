@@ -212,8 +212,8 @@ session_start();
                 "idSerie3"=>295, //Requerimento
                 "idSerie4"=>541, //Termo
                 "numIdUnidade"=>$numIdUnidade,
-                "zonaDescricao"=> '' //mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
-                "zonaEndereco"=> '' //mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
+                "zonaDescricao"=> '', //mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
+                "zonaEndereco"=> '', //mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
                 "strWSDL"=>"https://sei.tre-pe.jus.br/sei/controlador_ws.php?servico=sei",
             );
         }
