@@ -38,14 +38,14 @@ $dados = [
     'logo' => 'https://'.$_SERVER['SERVER_NAME'].'/solicitacao-eleitor/img/logo-tre.png'
 ];
 
-$strWSDL = 'https://sei.tre-pe.jus.br/sei/controlador_ws.php?servico=sei';
+$strWSDL = getAmbiente()["strWSDL"];
 
-if(!@file_get_contents($strWSDL)) {
+/*if(!@file_get_contents($strWSDL)) {
     echo 'Arquivo WSDL '.$strWSDL.' não encontrado.';
     die();
-}
+}*/
 try{
-	$objWS = new SoapClient($strWSDL, array('encoding'=>'WINDOWS-1252'));
+	$objWS = new SoapClient("/solicitacao-eleitor/ws_sei.wsdl", array('encoding'=>'WINDOWS-1252'));
 }catch(Exception $e){
 	 echo 'Erro acessando serviço.'.$e;
 	 die();
