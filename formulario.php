@@ -330,7 +330,7 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                 <label class="font-weight-bold w-100" for="file-rg">
                                     Cópia digitalizada do RG <span style="color: red;">*</span>
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteRg" id="file-rg" accept=".pdf,.jpg,.png" style="height: 37px"
-                                        <?php echo isset($_SESSION['data']['email']) ? 'value="'.$_SESSION['data']['compravanteRg']['tmp_name'].'"' : ''; ?>
+                                        <?php echo isset($_SESSION['data']['email']) ? 'value="'.$_SESSION['data']['compravanteRg']['tmp_name'].'' : ''; ?>>
                                 </label>
                             </div>
                             <p class="error" id="erro-comprante-rg"></p>
