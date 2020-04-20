@@ -415,16 +415,15 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
 <script src="js/jquey.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/regra-formulario.js"></script>
-<script src="js/consultaAjax.js"></script>
 <script>
     <?php
-    if (isset($_SESSION['data']['municipioDestino'])) {
+   /* if (isset($_SESSION['data']['municipioDestino'])) {
         echo 'buscarMunicipio('.$_SESSION['data']['municipioDestino'].')';
-    }
+    }*/
     ?>
 
     function buscarMunicipio(cod) {
-        var selectMunicipioDestino = document.getElementById('select-municipio-destino');
+     /*   var selectMunicipioDestino = document.getElementById('select-municipio-destino');
         $.ajax({
             url: "/solicitacao-candidato/database/municipio.php",
             success: function(result) {
@@ -437,6 +436,6 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                 });
             }
         });
-    }
+    }*/
 </script>
 </html>
