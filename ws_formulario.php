@@ -167,6 +167,7 @@ session_start();
 
     function getAmbiente(){
         $municipioDestino = isset($_POST['municipioDestino']) ? $_POST['municipioDestino'] : '';
+/*
         require_once "database/oracle.php";
 
         $con = DBOracle::Conecta('ADM');
@@ -200,21 +201,23 @@ session_start();
         }
 
         $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
+*/
+        $numIdUnidade = 594; //$municipioDestino;
 
-        if ($_SERVER['SERVER_NAME'] == 'sei-des1.tre-to.jus.br' || $_SERVER['SERVER_NAME'] == 'localhost') {
+        if ($_SERVER['SERVER_NAME'] == 'sei.tre-pe.jus.br' || $_SERVER['SERVER_NAME'] == 'localhost') {
             return array(
-                "idTipoProcedimento"=>100000899,
-                "idSerie"=>50018,
-                "idSerie2"=>293,
-                "idSerie3"=>295,
-                "idSerie4"=>541,
+                "idTipoProcedimento"=>13364, //ATENDIMENTO AO CIDADÃO
+                "idSerie"=>50018, //Formulário
+                "idSerie2"=>293, //Anexo
+                "idSerie3"=>295, //Requerimento
+                "idSerie4"=>541, //Termo
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=>mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaEndereco"=>mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
-                "strWSDL"=>"https://sei-des1.tre-to.jus.br/sei/controlador_ws.php?servico=sei",
+                "strWSDL"=>"https://sei.tre-pe.jus.br/sei/controlador_ws.php?servico=sei",
             );
         }
-
+/*
         if ($_SERVER['SERVER_NAME'] == 'sei-hom.tre-to.jus.br') {
             return array(
                 "idTipoProcedimento"=>100000808,
@@ -242,6 +245,7 @@ session_start();
                 "strWSDL"=>"https://sei.tre-to.jus.br/sei/controlador_ws.php?servico=sei"
             );
         }
+*/
     }
 
     //-- Config do WS para este formulrio (ALTERAR)
@@ -253,7 +257,7 @@ session_start();
     $IdSerie2 =  getAmbiente()["idSerie2"];
     $IdSerie3 =  getAmbiente()["idSerie3"];
     $IdSerie4 =  getAmbiente()["idSerie4"];
-    $Descricao = 'Formulrio de Regularizao.';
+    $Descricao = 'Formulário de Regularização';
 
     $numIdUnidade =  getAmbiente()["numIdUnidade"];
     $UnidadesEnvio = array();
