@@ -38,7 +38,6 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                 <?php
                 if (isset($_SESSION['error']['campo'])) {
                     if ($_SESSION['error']['campo'] == 'comprovanteRg'
-                        || $_SESSION['error']['campo'] == 'comprovanteCpf'
                         || $_SESSION['error']['campo'] == 'comprovanteTitulo'
                         || $_SESSION['error']['campo'] == 'comprovanteEndereco'
                         || $_SESSION['error']['campo'] == 'comprovanteSelfie') {
@@ -341,7 +340,6 @@ if (isset($_GET['aceito']) && $_GET['aceito'] == 'true') {
                                     <input class=" form-control form-control-sm" type="file" name="comprovanteCpf" id="file-cpf"  accept=".pdf,.jpg,.png" style="height: 37px">
                                 </label>
                             </div>
-                            <p class="error" id="erro-comprante-cpf"></p>
                             <div class="form-group" id="divComprovanteTitulo" style="display: none;">
                                 <label class="font-weight-bold w-100" for="file-titulo">
                                     Cópia digitalizada do Título de Eleitor <span style="color: red;">*</span>
