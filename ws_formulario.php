@@ -197,6 +197,7 @@ session_start();
         $numIdUnidade = 594; //$municipioDestino;
 
         if ($_SERVER['SERVER_NAME'] == 'sei.tre-pe.jus.br' || $_SERVER['SERVER_NAME'] == 'localhost') {
+            echo 'Entrou';
             return array(
                 "idTipoProcedimento"=>13364, //ATENDIMENTO AO CIDADÃO
                 "idSerie"=>50018, //Formulário
@@ -206,7 +207,7 @@ session_start();
                 "numIdUnidade"=>$numIdUnidade,
                 "zonaDescricao"=> '', //mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
                 "zonaEndereco"=> '', //mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
-                "strWSDL"=> "https://sei.tre-pe.jus.br/sei/controlador_ws.php?servico=sei"
+                "strWSDL"=> 'https://sei.tre-pe.jus.br/sei/controlador_ws.php?servico=sei'
             );
         }
 /*
