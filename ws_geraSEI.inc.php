@@ -40,6 +40,7 @@ $dados = [
 
 $strWSDL = getAmbiente()["strWSDL"];
 
+// Desativei a verificação do certificado SSL, estava dando erro. Podemos deixar desativado, adicionar um arquivo com o certificado no servidor, ou puxar o arquivo wsdl do próprio projeto.
 if(!file_get_contents($strWSDL, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))))) {
     echo 'Arquivo WSDL '.$strWSDL.' não encontrado.';
     die();
