@@ -40,7 +40,9 @@ $dados = [
 
 $strWSDL = getAmbiente()["strWSDL"];
 
-if(!@file_get_contents($strWSDL)) {
+echo $strWSDL;
+
+if(!file_get_contents($strWSDL)) {
     echo 'Arquivo WSDL '.$strWSDL.' não encontrado.';
     die();
 }
