@@ -195,7 +195,7 @@ session_start();
         $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
 */
         $numIdUnidade = 594; //$municipioDestino;
-        echo 'Entrou 1'
+        echo 'Entrou 1';
         if ($_SERVER['SERVER_NAME'] == 'sei.tre-pe.jus.br' || $_SERVER['SERVER_NAME'] == 'localhost') {
             echo 'Entrou 2';
             return array(
