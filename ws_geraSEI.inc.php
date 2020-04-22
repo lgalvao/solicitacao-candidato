@@ -40,7 +40,7 @@ $dados = [
 
 $strWSDL = getAmbiente()["strWSDL"];
 
-if(!file_get_contents($strWSDL, false)) {
+if(!file_get_contents($strWSDL, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))))) {
     echo 'Arquivo WSDL '.$strWSDL.' não encontrado.';
     die();
 }
