@@ -44,8 +44,13 @@ if(!file_get_contents($strWSDL)) {
     echo 'Arquivo WSDL '.$strWSDL.' não encontrado.';
     die();
 }
+
+$opts = array(
+	'ssl' => array('verify_peer' => false, 'verify_peer_name' => false)
+);
+
 try{
-	$objWS = new SoapClient($strWSDL, array('encoding'=>'WINDOWS-1252'));
+	$objWS = new SoapClient($strWSDL, array('encoding'=>'WINDOWS-1252', 'stream_context' => stream_context_create($opts)));
 }catch(Exception $e){
 	 echo 'Erro acessando serviço.'.$e;
 	 die();
