@@ -290,9 +290,11 @@ if (isset($comprovante_alistamento_name)) {
 
     array_push($documentos, $DocumentoRecebido);
 }
-
+ try{
     $ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, getAmbiente()["numIdUnidade"], $Procedimento, $documentos, array(), $UnidadesEnvio);
-
+ } catch (SoapFault $e) {
+    print_r($e->getMessage());
+ }
 
 if ($email != '') {
     $url  = 'http://dudol:8080/dudol/email/enviar';

@@ -195,7 +195,7 @@ session_start();
         $numIdUnidade = $idIunidade[0]['ID_UNIDADE'];
 */
         $numIdUnidade = 594; //$municipioDestino;
-        
+        echo $municipioDestino;
         return array(
             "idTipoProcedimento"=>13364, //ATENDIMENTO AO CIDADÃO
             "idSerie"=>50018, //Formulário
