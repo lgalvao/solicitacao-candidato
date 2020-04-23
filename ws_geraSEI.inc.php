@@ -40,6 +40,7 @@ $dados = [
 
 $strWSDL = getAmbiente()["strWSDL"];
 
+// Precisei retirar a verificação de assinatura. Para utilizar a verificação, temos que adicionar um certificado.
 $opts = array(
 	'ssl' => array('verify_peer' => false, 'verify_peer_name' => false)
 );
@@ -64,7 +65,7 @@ $Procedimento['IdTipoProcedimento'] = $IdTipoProcedimento;
 $Procedimento['Especificacao'] = $_SESSION['meta_description'];
 
 $arrAssuntos = array();
-$arrAssuntos[] = array('CodigoEstruturado'=>'500-2.02');
+$arrAssuntos[] = array('CodigoEstruturado'=>'90.99.01');
 $Procedimento['Assuntos'] = $arrAssuntos;
 
 //array da autoridade
