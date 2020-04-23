@@ -45,7 +45,7 @@ if(!file_get_contents($strWSDL)) {
     die();
 }
 try{
-	$objWS = new SoapClient($strWSDL, array('encoding'=>'WINDOWS-1252'));
+	$objWS = new SoapClient($strWSDL);
 }catch(Exception $e){
 	 echo 'Erro acessando serviço.'.$e;
 	 die();
@@ -291,8 +291,12 @@ if (isset($comprovante_alistamento_name)) {
     array_push($documentos, $DocumentoRecebido);
 }
 
+try{
     $ret = $objWS->gerarProcedimento($SEISistema, $SEIForm, getAmbiente()["numIdUnidade"], $Procedimento, $documentos, array(), $UnidadesEnvio);
-
+} catch(SoapFault $e) {
+	echo $e->getMessage();
+	die();
+}
 
 if ($email != '') {
     $url  = 'http://dudol:8080/dudol/email/enviar';
