@@ -201,7 +201,7 @@ session_start();
             "idSerie"=>50018, //Formulário
             "idSerie2"=>293, //Anexo
             "idSerie3"=>295, //Requerimento
-            "idSerie4"=>541, //Termo
+            "idSerie4"=>310, // Troquei de Termo para Informação
             "numIdUnidade"=>$numIdUnidade,
             "zonaDescricao"=> '', //mb_convert_encoding($descricaoMunicipio[0]['NOM_LOCALIDADE'], 'ISO-8859-1', 'UTF-8'),
             "zonaEndereco"=> '', //mb_convert_encoding($numeroZona[0]['DES_ENDERECO'], 'ISO-8859-1', 'UTF-8'). ' - CEP '. mb_convert_encoding($numeroZona[0]['NUM_CEP'], 'ISO-8859-1', 'UTF-8'),
