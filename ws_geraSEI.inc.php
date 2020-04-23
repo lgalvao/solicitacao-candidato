@@ -40,14 +40,14 @@ $dados = [
 
 $strWSDL = getAmbiente()["strWSDL"];
 
-if(!file_get_contents($strWSDL)) {
-    echo 'Arquivo WSDL '.$strWSDL.' não encontrado.';
-    die();
-}
-
 $opts = array(
 	'ssl' => array('verify_peer' => false, 'verify_peer_name' => false)
 );
+
+if(!file_get_contents($strWSDL, false, stream_context_create($opts))) {
+    echo 'Arquivo WSDL '.$strWSDL.' não encontrado.';
+    die();
+}
 
 try{
 	$objWS = new SoapClient($strWSDL, array('encoding'=>'WINDOWS-1252', 'stream_context' => stream_context_create($opts)));
