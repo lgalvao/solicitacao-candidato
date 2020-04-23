@@ -169,6 +169,7 @@ $conteudoTermos = $mustache->render(file_get_contents('_termos.html'), $dados);
 $DocumentoGerado3['Conteudo'] = base64_encode($conteudoTermos);
 $DocumentoGerado3['NivelAcesso'] = null;
 
+//Tive que comentar o termo pois gerava um erro de que não temos essa série associada a nenhum tipo de documento.
 //array_push($documentos, $DocumentoGerado3);
 
 if (isset($comprovante_rg_name)) {
