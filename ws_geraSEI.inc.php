@@ -45,7 +45,7 @@ if(!file_get_contents($strWSDL)) {
     die();
 }
 try{
-	$objWS = new SoapClient($strWSDL);
+	$objWS = new SoapClient($strWSDL, array('encoding'=>'WINDOWS-1252'));
 }catch(Exception $e){
 	 echo 'Erro acessando serviço.'.$e;
 	 die();
