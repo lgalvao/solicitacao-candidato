@@ -169,7 +169,7 @@ $conteudoTermos = $mustache->render(file_get_contents('_termos.html'), $dados);
 $DocumentoGerado3['Conteudo'] = base64_encode($conteudoTermos);
 $DocumentoGerado3['NivelAcesso'] = null;
 
-array_push($documentos, $DocumentoGerado3);
+//array_push($documentos, $DocumentoGerado3);
 
 if (isset($comprovante_rg_name)) {
 	//Documento Recebido
